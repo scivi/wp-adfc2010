@@ -171,7 +171,7 @@ body {
 
 .nonFooter {
 	background:			url(gfx/nonfooter_bg.gif) repeat-y;
-	min-height:			97%;
+	min-height:			660px;
 	position:			relative;
 	width:				980px;
 }

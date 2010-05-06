@@ -1,0 +1,43 @@
+/* DEFINITIONS: TEXT -> START */
+
+ul, ol {
+	margin-left:			16px;
+}
+
+/* DEFINITIONS: TEXT -> END */
+
+/* DEFINITIONS: BASE-LAYOUT -> START */
+
+* html .nonFooter {
+	height:				97%;
+}
+
+* html .footer {
+	height:				33px;
+}
+
+.metaNav {
+	height:				25px;
+}
+
+.breadcrumb {
+	height:				24px;
+}
+
+.teaserBox h2 {
+	height:				17px;
+}
+
+/* DEFINITIONS: BASE-LAYOUT -> END */
+
+/* DEFINITIONS: NAVIGATION -> START */
+
+.navigation ul li a:link, .navigation ul li a:hover, .navigation ul li a:active, .navigation ul li a:visited {
+	height:				25px;
+}
+
+.navigation ul ul li a:link, .navigation ul ul li a:hover, .navigation ul ul li a:active, .navigation ul ul li a:visited, .navigation ul ul li a.active:link, .navigation ul ul li a.active:hover, .navigation ul ul li a.active:active, .navigation ul ul li a.active:visited {
+	height:				1px;
+}
+
+/* DEFINITIONS: NAVIGATION -> END */

@@ -1,0 +1,79 @@
+/* DEFINITIONS: BASE-LAYOUT -> START */
+
+html {
+	height:				auto;
+}
+
+body {
+	height:				auto;
+	margin:				0;
+}
+
+.nonFooter {
+	background:			none;
+	height:				auto;
+	min-height:			auto;
+	padding:			0 20px;
+	width:				565px;
+}
+
+.master {
+	width:				565px;
+}
+
+.printLogo {
+	display:			block;
+	padding:			20px 0;
+}
+
+.main {
+	width:				auto;
+}
+
+.printRightCol {
+	padding:			0;
+	width:				565px;
+}
+
+.breadcrumb {
+	border-top:			#e6eef2 solid 1px;
+	padding:			10px 0;
+	width:				560px;
+}
+
+.content {
+	padding-bottom:			0;
+	padding-left:			0;
+	padding-right:			0;
+}
+
+.content .teaserBox h2,
+.content .rightCol .teaserBox h2 {
+	background:			none;
+	margin:				0 0 5px;
+	min-height:			auto;
+	padding:			0;
+}
+
+.teaserBoxOffer .content {
+	background:			none;
+	border:				none;
+	padding:			0;
+}
+
+
+.printFooter {
+	display:			block;
+}
+
+.noPrint,
+.adsTop,
+.head,
+.metaNav,
+.bottomLinks,
+.adsRight,
+.footer {
+	display:			none;
+}
+
+/* DEFINITIONS: BASE-LAYOUT -> END */

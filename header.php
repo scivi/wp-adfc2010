@@ -48,10 +48,9 @@
 	<link rel="shortcut icon" href="<?php bloginfo('template_directory') ?>/gfx/favicon.ico" type="image/vnd.microsoft.icon">
 	<?php wp_head(); ?>
 </head>
-
 <body <?php body_class(); ?>>
 <div id="wrapper" class="hfeed nonFooter">
-<?php /* <div class="adsTop"></div> */ ?>
+	<div class="adsTop"></div>
 	<div class="master">
 		<div class="head noPrint">
 			<div class="headStripe "></div>

@@ -535,7 +535,8 @@ body {
 	padding:			0;
 }
 
-.navigation ul li a:link, .navigation ul li a:hover, .navigation ul li a:active, .navigation ul li a:visited {
+.navigation ul li a:link, .navigation ul li a:hover, .navigation ul li a:active, .navigation ul li a:visited,
+.navigation h3 {
 	background:			url(gfx/navigation_normal_bg.gif) left center no-repeat;
 	border-bottom:			white solid 1px;
 	color:				#475c66;
@@ -548,15 +549,26 @@ body {
 	text-decoration:		none;
 }
 
-.navigation ul li a:hover, .navigation ul li a:active, .navigation ul li a.active:link, .navigation ul li a.active:hover, .navigation ul li a.active:active, .navigation ul li a.active:visited {
+.navigation h3 {
+	display: none;
+	background-image:		none;
+	font-style:			italic;
+	padding-top:			24px;
+}
+
+.navigation .widget_nav_menu h3.widget-title {
+	display: none;
+}
+
+.navigation ul li a:hover, .navigation ul li a:active, .navigation ul li.current-menu-item a:link, .navigation ul li.current-menu-item a:hover, .navigation ul li.current-menu-item a:active, .navigation ul li.current-menu-item a:visited {
 	background-image:		url(gfx/navigation_hover_bg.gif);
 }
 
-.navigation ul li a.active:link, .navigation ul li a.active:hover, .navigation ul li a.active:active, .navigation ul li a.active:visited {
+.navigation ul li.current-menu-item a:link, .navigation ul li.current-menu-item a:hover, .navigation ul li.current-menu-item a:active, .navigation ul li.current-menu-item a:visited {
 	background-image:		url(gfx/navigation_active_bg.gif);
 }
 
-.navigation ul ul li a:link, .navigation ul ul li a:hover, .navigation ul ul li a:active, .navigation ul ul li a:visited, .navigation ul ul li a.active:link, .navigation ul ul li a.active:hover, .navigation ul ul li a.active:active, .navigation ul ul li a.active:visited {
+.navigation ul ul li a:link, .navigation ul ul li a:hover, .navigation ul ul li a:active, .navigation ul ul li a:visited, .navigation ul ul li.current-menu-item a:link, .navigation ul ul li.current-menu-item a:hover, .navigation ul ul li.current-menu-item a:active, .navigation ul ul li.current-menu-item a:visited {
 	background:			none;
 	border:				0;
 	font-size:			11px;
@@ -566,11 +578,11 @@ body {
 	padding-bottom:			5px;
 }
 
-.navigation ul ul li a:hover, .navigation ul ul li a:active, .navigation ul ul li a.active:link, .navigation ul ul li a.active:hover, .navigation ul ul li a.active:active, .navigation ul ul li a.active:visited {
+.navigation ul ul li a:hover, .navigation ul ul li a:active, .navigation ul ul li.current-menu-item a:link, .navigation ul ul li.current-menu-item a:hover, .navigation ul ul li.current-menu-item a:active, .navigation ul ul li.current-menu-item a:visited {
 	background:			url(gfx/subnavigation_hover_bg.gif) 14px center no-repeat;
 }
 
-.navigation ul ul li a.active:link, .navigation ul ul li a.active:hover, .navigation ul ul li a.active:active, .navigation ul ul li a.active:visited {
+.navigation ul ul li.current-menu-item a:link, .navigation ul ul li.current-menu-item a:hover, .navigation ul ul li.current-menu-item a:active, .navigation ul ul li.current-menu-item a:visited {
 	font-weight:			bold;
 }
 

@@ -96,96 +96,6 @@ function adfc2010_setup() {
 
 	// This theme allows users to set a custom background
 	add_custom_background();
-
-	// Your changeable header business starts here
-	define( 'HEADER_TEXTCOLOR', '' );
-	// No CSS, just IMG call. The %s is a placeholder for the theme template directory URI.
-	define( 'HEADER_IMAGE', '%s/images/headers/path.jpg' );
-
-	// The height and width of your custom header. You can hook into the theme's own filters to change these values.
-	// Add a filter to adfc2010_header_image_width and adfc2010_header_image_height to change these values.
-	define( 'HEADER_IMAGE_WIDTH', apply_filters( 'adfc2010_header_image_width', 940 ) );
-	define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'adfc2010_header_image_height', 198 ) );
-
-	// We'll be using post thumbnails for custom header images on posts and pages.
-	// We want them to be 940 pixels wide by 198 pixels tall (larger images will be auto-cropped to fit).
-	set_post_thumbnail_size( HEADER_IMAGE_WIDTH, HEADER_IMAGE_HEIGHT, true );
-
-	// Don't support text inside the header image.
-	define( 'NO_HEADER_TEXT', true );
-
-	// Add a way for the custom header to be styled in the admin panel that controls
-	// custom headers. See adfc2010_admin_header_style(), below.
-	add_custom_image_header( '', 'adfc2010_admin_header_style' );
-
-	// ... and thus ends the changeable header business.
-
-	// Default custom headers packaged with the theme. %s is a placeholder for the theme template directory URI.
-	register_default_headers( array (
-		'berries' => array (
-			'url' => '%s/images/headers/berries.jpg',
-			'thumbnail_url' => '%s/images/headers/berries-thumbnail.jpg',
-			'description' => __( 'Berries', 'adfc2010' )
-		),
-		'cherryblossom' => array (
-			'url' => '%s/images/headers/cherryblossoms.jpg',
-			'thumbnail_url' => '%s/images/headers/cherryblossoms-thumbnail.jpg',
-			'description' => __( 'Cherry Blossoms', 'adfc2010' )
-		),
-		'concave' => array (
-			'url' => '%s/images/headers/concave.jpg',
-			'thumbnail_url' => '%s/images/headers/concave-thumbnail.jpg',
-			'description' => __( 'Concave', 'adfc2010' )
-		),
-		'fern' => array (
-			'url' => '%s/images/headers/fern.jpg',
-			'thumbnail_url' => '%s/images/headers/fern-thumbnail.jpg',
-			'description' => __( 'Fern', 'adfc2010' )
-		),
-		'forestfloor' => array (
-			'url' => '%s/images/headers/forestfloor.jpg',
-			'thumbnail_url' => '%s/images/headers/forestfloor-thumbnail.jpg',
-			'description' => __( 'Forest Floor', 'adfc2010' )
-		),
-		'inkwell' => array (
-			'url' => '%s/images/headers/inkwell.jpg',
-			'thumbnail_url' => '%s/images/headers/inkwell-thumbnail.jpg',
-			'description' => __( 'Inkwell', 'adfc2010' )
-		),
-		'path' => array (
-			'url' => '%s/images/headers/path.jpg',
-			'thumbnail_url' => '%s/images/headers/path-thumbnail.jpg',
-			'description' => __( 'Path', 'adfc2010' )
-		),
-		'sunset' => array (
-			'url' => '%s/images/headers/sunset.jpg',
-			'thumbnail_url' => '%s/images/headers/sunset-thumbnail.jpg',
-			'description' => __( 'Sunset', 'adfc2010' )
-		)
-	) );
-}
-endif;
-
-if ( ! function_exists( 'adfc2010_admin_header_style' ) ) :
-/**
- * Styles the header image displayed on the Appearance > Header admin panel.
- *
- * Referenced via add_custom_image_header() in adfc2010_setup().
- *
- * @since 3.0.0
- */
-function adfc2010_admin_header_style() {
-?>
-<style type="text/css">
-#headimg {
-	height: <?php echo HEADER_IMAGE_HEIGHT; ?>px;
-	width: <?php echo HEADER_IMAGE_WIDTH; ?>px;
-}
-#headimg h1, #headimg #desc {
-	display: none;
-}
-</style>
-<?php
 }
 endif;
 
@@ -200,7 +110,7 @@ if ( ! function_exists( 'adfc2010_the_page_number' ) ) :
 function adfc2010_the_page_number() {
 	global $paged; // Contains page number.
 	if ( $paged >= 2 )
-		echo ' | ' . sprintf( __( 'Page %s' , 'adfc2010' ), $paged );
+		echo ' | ' . sprintf( __( 'Seite %s' , 'adfc2010' ), $paged );
 }
 endif;
 
@@ -213,7 +123,7 @@ endif;
  * @return int
  */
 function adfc2010_excerpt_length( $length ) {
-	return 40;
+	return 42;
 }
 add_filter( 'excerpt_length', 'adfc2010_excerpt_length' );
 
@@ -227,7 +137,7 @@ add_filter( 'excerpt_length', 'adfc2010_excerpt_length' );
  * @return string A pretty 'Continue reading' link.
  */
 function adfc2010_excerpt_more( $more ) {
-	return ' &hellip; <a href="'. get_permalink() . '">' . __('Continue reading <span class="meta-nav">&rarr;</span>', 'adfc2010') . '</a>';
+	return ' &hellip; <a href="'. get_permalink() . '">' . __('Weiterlesen <span class="meta-nav">&rarr;</span>', 'adfc2010') . '</a>';
 }
 add_filter( 'excerpt_more', 'adfc2010_excerpt_more' );
 
@@ -376,7 +286,7 @@ function adfc2010_get_next_attachment_url() {
 	global $post;
 	$post = get_post($post);
 	$attachments = array_values( get_children( array( 'post_parent' => $post->post_parent, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => 'ASC', 'orderby' => 'menu_order ID' ) ) );
- 
+
 	foreach ( $attachments as $k => $attachment ) {
 		if ( $attachment->ID == $post->ID )
 			break;

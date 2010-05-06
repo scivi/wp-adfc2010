@@ -1,6 +1,6 @@
 			<div class="leftCol noPrint">
 				<div id="primary" class="widget-area">
-					<ul class="xoxo">
+					<ul class="xoxo navigation">
 <?php if ( ! dynamic_sidebar( 'primary-widget-area' ) ) : // begin default primary widget area ?>
 					<li id="search" class="widget-container widget_search">
 						<?php get_search_form(); ?>
@@ -27,7 +27,7 @@
 
 <?php if ( is_active_sidebar( 'secondary-widget-area' ) ) : // Nothing here by default and design ?>
 				<div id="secondary" class="widget-area">
-					<ul class="xoxo">
+					<ul class="xoxo navigation">
 						<?php dynamic_sidebar( 'secondary-widget-area' ); ?>
 					</ul>
 				</div><!-- #secondary .widget-area -->

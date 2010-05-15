@@ -150,7 +150,8 @@
 			</div><!-- #entry-utility -->
 		</div><!-- #post-<?php the_ID(); ?> -->
 
-		<?php comments_template( '', true ); ?>
+		<?php // comments_template( '', true ); 
+		?>
 
 	<?php endif; // if different categories queried ?>
 <?php endwhile; ?>

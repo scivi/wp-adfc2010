@@ -119,7 +119,7 @@
 
 			<div class="entry-meta">
 				<?php
-					printf( __( '<span class="meta-prep meta-prep-author">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a> <span class="meta-sep"> by </span> <span class="author vcard"><a class="url fn n" href="%4$s" title="%5$s">%6$s</a></span>', 'twentyten' ),
+					printf( __( '<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a>. <span class="meta-sep"> Von </span> <span class="author vcard"><a class="url fn n" href="%4$s" title="%5$s">%6$s</a></span>', 'twentyten' ),
 						get_permalink(),
 						esc_attr( get_the_time() ),
 						get_the_date(),
@@ -142,9 +142,9 @@
 	<?php endif; ?>
 
 			<div class="entry-utility">
-				<span class="cat-links"><span class="entry-utility-prep entry-utility-prep-cat-links"><?php _e( 'Posted in ', 'twentyten' ); ?></span><?php the_category( ', ' ); ?></span>
+				<span class="cat-links"><?php the_category( ', ' ); ?></span>
 				<span class="meta-sep"> | </span>
-				<?php the_tags( '<span class="tag-links"><span class="entry-utility-prep entry-utility-prep-tag-links">' . __( 'Tagged ', 'twentyten' ) . '</span>', ', ', '<span class="meta-sep"> | </span>' ); ?>
+				<?php the_tags( '<span class="tag-links"><span class="entry-utility-prep entry-utility-prep-tag-links">' . __( 'Stichworte ', 'twentyten' ) . '</span>', ', ', '<span class="meta-sep"> | </span>' ); ?>
 				<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'twentyten' ), __( '1 Comment', 'twentyten' ), __( '% Comments', 'twentyten' ) ); ?></span>
 				<?php edit_post_link( __( 'Edit', 'twentyten' ), '<span class="meta-sep">|</span> <span class="edit-link">', '</span>' ); ?>
 			</div><!-- #entry-utility -->

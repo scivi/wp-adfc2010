@@ -29,26 +29,27 @@
 							</div>
 						</div>
 <?php endif; ?>
-					<div class="teaserBox noPrint">
-						<h2>Verwandte Themen</h2>
-						<div class="content noMargin">
-							<?php echo $categories; ?>
+						<div class="teaserBox noPrint">
+							<h2>Verwandte Themen</h2>
+							<div class="content noMargin">
+								<?php echo $categories; ?>
+							</div>
 						</div>
-					</div>
-					<div class="teaserBox noPrint">
-						<h2>Stichworte</h2>
-						<div class="content noMargin">
-							<?php echo $tags; ?>
+						<div class="teaserBox noPrint">
+							<h2>Stichworte</h2>
+							<div class="content noMargin">
+								<?php echo $tags; ?>
+							</div>
 						</div>
-					</div>
 <?php if ( $editlink ) : ?>
-					<div class="teaserBox noPrint">
-						<h2>Admin</h2>
-						<div class="content noMargin">
-							<?php echo $editlink; ?>
+						<div class="teaserBox noPrint">
+							<h2>Admin</h2>
+							<div class="content noMargin">
+								<?php echo $editlink; ?>
+							</div>
 						</div>
-					</div>
 <?php endif; ?>
+					</div>
 					<div class="clearer"></div>
 				</div>
 			</div>

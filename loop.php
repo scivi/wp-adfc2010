@@ -13,14 +13,6 @@
  */
 ?>
 
-<?php /* Display navigation to next/previous pages when applicable */ ?>
-<?php if ( $wp_query->max_num_pages > 1 ) : ?>
-	<div id="nav-above" class="navigation">
-		<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'twentyten' ) ); ?></div>
-		<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'twentyten' ) ); ?></div>
-	</div><!-- #nav-above -->
-<?php endif; ?>
-
 <?php /* If there are no posts to display, such as an empty archive page */ ?>
 <?php if ( ! have_posts() ) : ?>
 	<div id="post-0" class="post error404 not-found">
@@ -35,7 +27,7 @@
 <?php /* Start the Loop */ ?>
 <?php while ( have_posts() ) : the_post(); ?>
 
-<?php /* How to Display posts in the Gallery Category */ ?>
+<?php /* How to display posts in the Gallery Category -- TODO */ ?>
 	<?php if ( in_category( _x('gallery', 'gallery category slug', 'twentyten') ) ) : ?>
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'twentyten' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
@@ -51,9 +43,9 @@
 						get_the_author()
 					);
 				?>
-			</div><!-- .entry-meta -->
+			</div>
 
-			<div class="entry-content">
+			<div class="content">
 				<div class="gallery-thumb">
 					<a class="size-thumbnail" href="<?php the_permalink(); ?>"><?php
 					$images = get_children( array( 'post_parent' => $post->ID, 'post_type' => 'attachment', 'post_mime_type' => 'image', 'orderby' => 'menu_order', 'order' => 'ASC', 'numberposts' => 999 ) );
@@ -68,7 +60,7 @@
 					); ?></em></p>
 
 				<?php the_excerpt( '' ); ?>
-			</div><!-- .entry-content -->
+			</div>
 
 			<div class="entry-utility">
 				<?php
@@ -79,78 +71,83 @@
 				<span class="meta-sep"> | </span>
 				<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'twentyten' ), __( '1 Comment', 'twentyten' ), __( '% Comments', 'twentyten' ) ); ?></span>
 				<?php edit_post_link( __( 'Edit', 'twentyten' ), '<span class="meta-sep">|</span> <span class="edit-link">', '</span>' ); ?>
-			</div><!-- #entry-utility -->
+			</div>
 		</div>
 
-<?php /* How to display posts in the asides category */ ?>
-	<?php elseif ( in_category( _x('asides', 'asides category slug', 'twentyten') ) ) : ?>
-		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<?php /* How to display posts in the teaserbox category */ ?>
+	<?php elseif (in_category('teaserbox')) : ?>
+		<div class="teaserBox teaserBoxGrey teaserBoxOffer">
+			<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php if ( is_archive() || is_search() ) : // Only display Excerpts for archives & search ?>
-			<div class="entry-summary">
-				<?php the_excerpt( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentyten' ) ); ?>
-			</div><!-- .entry-summary -->
+				<div class="rubricList">
+					<?php the_excerpt('Weiterlesen <span class="meta-nav">&rarr;</span>'); ?>
+				</div>
 	<?php else : ?>
-			<div class="entry-content">
-				<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentyten' ) ); ?>
-			</div><!-- .entry-content -->
+				<div class="content">
+					<?php the_content('Weiterlesen <span class="meta-nav">&rarr;</span>'); ?>
+				</div>
 	<?php endif; ?>
-
-			<div class="entry-utility">
-				<?php
-					printf( __( '<span class="meta-prep meta-prep-author">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a> <span class="meta-sep"> by </span> <span class="author vcard"><a class="url fn n" href="%4$s" title="%5$s">%6$s</a></span>', 'twentyten' ),
-						get_permalink(),
-						esc_attr( get_the_time() ),
-						get_the_date(),
-						get_author_posts_url( get_the_author_meta( 'ID' ) ),
-						sprintf( esc_attr__( 'View all posts by %s', 'twentyten' ), get_the_author() ),
-						get_the_author()
-					);
-				?>
-				<span class="meta-sep"> | </span>
-				<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'twentyten' ), __( '1 Comment', 'twentyten' ), __( '% Comments', 'twentyten' ) ); ?></span>
-				<?php edit_post_link( __( 'Edit', 'twentyten' ), '<span class="meta-sep">|</span> <span class="edit-link">', '</span>' ); ?>
-			</div><!-- #entry-utility -->
-		</div><!-- #post-<?php the_ID(); ?> -->
+				<div class="entry-meta">
+					<?php
+						printf('<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a>. <span class="meta-sep"> Von </span> <span class="author vcard"><a class="url fn n" href="%4$s" title="%5$s">%6$s</a></span>'),
+							get_permalink(),
+							esc_attr( get_the_time() ),
+							get_the_date(),
+							get_author_posts_url( get_the_author_meta( 'ID' ) ),
+							sprintf( esc_attr__('Alle Beiträge von %s zeigen', 'twentyten'), get_the_author()),
+							get_the_author()
+						);
+					?>
+					<span class="meta-sep"> | </span>
+					<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'twentyten' ), __( '1 Comment', 'twentyten' ), __( '% Comments', 'twentyten' ) ); ?></span>
+					<?php edit_post_link( __( 'Edit', 'twentyten' ), '<span class="meta-sep">|</span> <span class="edit-link">', '</span>' ); ?>
+				</div>
+			</div><!-- #post-<?php the_ID(); ?> -->
+		</div><!-- teaserbox -->
 
 <?php /* How to display all other posts */ ?>
 	<?php else : ?>
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-			<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'twentyten' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+			<h1><a href="<?php the_permalink(); ?>" title="<?php printf(esc_attr__('Permalink zu %s', 'twentyten'), the_title_attribute('echo=0')); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 
 			<div class="entry-meta">
 				<?php
-					printf( __( '<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a>. <span class="meta-sep"> Von </span> <span class="author vcard"><a class="url fn n" href="%4$s" title="%5$s">%6$s</a></span>', 'twentyten' ),
+					printf('<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a>. <span class="meta-sep"> Von </span> <span class="author vcard"><a class="url fn n" href="%4$s" title="%5$s">%6$s</a></span>'),
 						get_permalink(),
 						esc_attr( get_the_time() ),
 						get_the_date(),
-						get_author_posts_url( get_the_author_meta( 'ID' ) ),
-						sprintf( esc_attr__( 'View all posts by %s', 'twentyten' ), get_the_author() ),
+						get_author_posts_url(get_the_author_meta('ID')),
+						sprintf( esc_attr__('Alle Beiträge von %s zeigen', 'twentyten'), get_the_author()),
 						get_the_author()
 					);
 				?>
-			</div><!-- .entry-meta -->
+			</div>
 
 	<?php if ( is_archive() || is_search() ) : // Only display Excerpts for archives & search ?>
-			<div class="entry-summary">
-				<?php the_excerpt( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentyten' ) ); ?>
-			</div><!-- .entry-summary -->
+			<div class="rubricList">
+				<?php the_excerpt('Weiterlesen <span class="meta-nav">&rarr;</span>'); ?>
+			</div>
 	<?php else : ?>
-			<div class="entry-content">
-				<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentyten' ) ); ?>
-				<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'twentyten' ), 'after' => '</div>' ) ); ?>
-			</div><!-- .entry-content -->
+			<div class="content">
+				<?php the_content('Weiterlesen <span class="meta-nav">&rarr;</span>'); ?>
+				<?php wp_link_pages(array('before' => '<div class="page-link">Seiten:', 'after' => '</div>')); ?>
+			</div>
 	<?php endif; ?>
+	<?php // for the right sidebar; comes after the loop
+		$categories = get_category(', ');
+		$tags = get_tags('', ', ', '<br/>');
+		$editlink = get_edit_post_link('Bearbeiten', '<span class="edit-link">', '</span>' );
+	?>
 
 			<div class="entry-utility">
 				<span class="cat-links"><?php the_category( ', ' ); ?></span>
-				<span class="meta-sep"> | </span>
-				<?php the_tags( '<span class="tag-links"><span class="entry-utility-prep entry-utility-prep-tag-links">' . __( 'Stichworte ', 'twentyten' ) . '</span>', ', ', '<span class="meta-sep"> | </span>' ); ?>
+				<?php the_tags('<span class="tag-links"><span class="entry-utility-prep entry-utility-prep-tag-links">Stichworte </span>', ', ', '<span class="meta-sep"> | </span>'); ?>
 				<?php // <span class="comments-link">
 				      // comments_popup_link( __( 'Leave a comment', 'twentyten' ), __( '1 Comment', 'twentyten' ), __( '% Comments', 'twentyten' ) ); 
 				      //</span>
 				?>
-				<?php edit_post_link( __( 'Edit', 'twentyten' ), '<span class="meta-sep">|</span> <span class="edit-link">', '</span>' ); ?>
-			</div><!-- #entry-utility -->
+				<?php edit_post_link('Bearbeiten', '<span class="meta-sep">|</span> <span class="edit-link">', '</span>' ); ?>
+			</div>
 		</div><!-- #post-<?php the_ID(); ?> -->
 
 		<?php // comments_template( '', true ); 
@@ -158,11 +155,3 @@
 
 	<?php endif; // if different categories queried ?>
 <?php endwhile; ?>
-
-<?php /* Display navigation to next/previous pages when applicable */ ?>
-<?php if (  $wp_query->max_num_pages > 1 ) : ?>
-				<div id="nav-below" class="navigation">
-					<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'twentyten' ) ); ?></div>
-					<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'twentyten' ) ); ?></div>
-				</div><!-- #nav-below -->
-<?php endif; ?>

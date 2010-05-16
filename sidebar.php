@@ -5,7 +5,6 @@
 					<li id="search" class="widget-container widget_search">
 						<?php get_search_form(); ?>
 					</li>
-					<!-- TODO: cats/tax. but via widgets in backend -->
 					<li id="archives" class="widget-container">
 						<h3 class="widget-title"><?php _e( 'Archives', 'twentyten' ); ?></h3>
 						<ul>
@@ -23,13 +22,13 @@
 					</li>
 <?php endif; // end default primary widget area ?>
 					</ul>
-				</div><!-- #primary .widget-area -->
+				</div>
 
 <?php if ( is_active_sidebar( 'secondary-widget-area' ) ) : // Nothing here by default and design ?>
 				<div id="secondary" class="widget-area">
 					<ul class="xoxo navigation">
 						<?php dynamic_sidebar( 'secondary-widget-area' ); ?>
 					</ul>
-				</div><!-- #secondary .widget-area -->
+				</div>
 <?php endif; ?>
 			</div>

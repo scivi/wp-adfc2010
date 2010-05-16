@@ -350,6 +350,17 @@ body {
 	border:				0;
 }
 
+.entry-meta {
+	font-size:			9px;
+	margin:				0 0 20px 0;
+	background:			#edf4fa url(gfx/teaserbox_headline_rounded_corner_orange.gif) no-repeat;
+	color:				#475c66;
+}
+
+.entry-utility {
+	display:			none;
+}
+
 .content .leftCol .teaserBox h2 {
 	color:				#3e5059;
 }

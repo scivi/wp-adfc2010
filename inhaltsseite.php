@@ -92,7 +92,7 @@
 								<!-- START -->
 								<!-- BEI DER "teaserBoxGrey" HANDELT ES SICH UM EINEN STANDARDTEASER FÜR DIE LINKE INHALTSSPALTE. -->
 								<div class="teaserBox teaserBoxGrey">
-									<h2>Headline</h2>
+									<h2>Headline Foo</h2>
 									<div class="content">
 										<p>Dies ist ein Blindtext. Er dient nur als Platzhalter für den eigentlichen Textinhalt, der zum jetzigen Zeitpunkt noch nicht bekannt ist. Der Blindtext hat eine bestimmte Länge, damit ein realistischer Eindruck von Textfluss entsteht. Wenn Sie bis hierher gelesen haben, sollten Sie jetzt aufhören denn nun wiederholt sich der Text.</p>
 									</div>
@@ -101,7 +101,7 @@
 								<!-- START -->
 								<!-- BEI DER "teaserBoxOffer" HANDELT ES SICH UM EINE ERWEITERTE VERSION DES STANDARDTEASER FÜR DIE LINKE INHALTSSPALTE, DIE JEDOCH DEM TEASERINHALT EINEN GRAUEN HINTERGRUND VERPASST. -->
 								<div class="teaserBox teaserBoxGrey teaserBoxOffer">
-									<h2>Headline</h2>
+									<h2>Headline Bar</h2>
 									<div class="content">
 										<p>Dies ist ein Blindtext. Er dient nur als Platzhalter für den eigentlichen Textinhalt, der zum jetzigen Zeitpunkt noch nicht bekannt ist. Der Blindtext hat eine bestimmte Länge, damit ein realistischer Eindruck von Textfluss entsteht. Wenn Sie bis hierher gelesen haben, sollten Sie jetzt aufhören denn nun wiederholt sich der Text. <a href="blindlink.html" class="blackLink">Dies ist ein Blindlink</a></p>
 									</div>

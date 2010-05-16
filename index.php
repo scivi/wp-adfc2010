@@ -41,7 +41,7 @@
 							<?php echo $tags; ?>
 						</div>
 					</div>
-<?php if ( $editlink ) ?>
+<?php if ( $editlink ) : ?>
 					<div class="teaserBox noPrint">
 						<h2>Admin</h2>
 						<div class="content noMargin">

@@ -134,9 +134,9 @@
 			</div>
 	<?php endif; ?>
 	<?php // for the right sidebar; comes after the loop
-		$categories = get_category(', ');
-		$tags = get_tags('', ', ', '<br/>');
-		$editlink = get_edit_post_link('Bearbeiten', '<span class="edit-link">', '</span>' );
+		//$categories = get_category(', ');
+		//$tags = get_tags('', ', ', '<br/>');
+		//$editlink = get_edit_post_link('Bearbeiten', '<span class="edit-link">', '</span>' );
 	?>
 
 			<div class="entry-utility">

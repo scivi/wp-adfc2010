@@ -358,7 +358,7 @@ body {
 }
 
 .entry-utility {
-	display:			none;
+	display:			block;
 }
 
 .content .leftCol .teaserBox h2 {

@@ -501,12 +501,12 @@ body {
 
 .footer ul {
 	list-style-type:		none;
-	display: 			inline-block;
+	display: 			inline;
 }
 .footer ul li {
 	display:			inline;
 }
-.footer ul li:before {
+.footer ul ul li:before {
 	content:			' | ';
 }
 

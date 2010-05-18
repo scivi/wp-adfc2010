@@ -110,6 +110,7 @@
 				<a href="<?php the_permalink(); ?>" title="<?php printf(esc_attr__('Permalink zu %s', 'twentyten'), the_title_attribute('echo=0')); ?>" rel="bookmark"><?php the_title(); ?></a>
 		<?php else : the_title(); endif ?>
 			</h1>
+		<?php if (!is_page()) : ?>
 			<div class="entry-meta">
 				<?php
 					printf('<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a>. <span class="meta-sep"> Von </span> <span class="author vcard"><a class="url fn n" href="%4$s" title="%5$s">%6$s</a></span>',
@@ -120,23 +121,24 @@
 						sprintf( esc_attr__('Alle Beiträge von %s zeigen', 'twentyten'), get_the_author()),
 						get_the_author()
 					);
-				?> 
+				?>
 			</div>
-	<?php if ( is_archive() || is_search() ) : // Only display Excerpts for archives & search ?>
+		<?php endif; ?>
+		<?php if ( is_archive() || is_search() ) : // Only display Excerpts for archives & search ?>
 			<div <?php echo (!is_single()) ? 'class="content" ' : '' ?>>
 				<?php the_excerpt('Mehr zu &raquo;' . get_the_title() . '&laquo;'); ?>
 			</div>
-	<?php else : ?>
+		<?php else : ?>
 			<div class="content">
 				<?php the_content('Mehr zu &raquo;' . get_the_title() . '&laquo;'); ?>
 				<?php wp_link_pages(array('before' => '<div class="page-link">Seiten:', 'after' => '</div>')); ?>
 			</div>
-	<?php endif; ?>
-	<?php // for the right sidebar; comes after the loop
-		remember('categories', get_the_category());
-		remember('tags', get_the_tags());
-		if (!is_archive() && !is_search()) remember('the_id', get_the_ID());
-	?>
+		<?php endif; ?>
+		<?php // for the right sidebar; comes after the loop
+			remember('categories', get_the_category());
+			remember('tags', get_the_tags());
+			if (!is_archive() && !is_search()) remember('the_id', get_the_ID());
+		?>
 			<div class="entry-utility hidden">
 				<span class="comments-link">
 				<?php // comments_popup_link( 'Einen Kommentar schreiben', 'Ein Kommentar', '% Kommentare'); ?>

@@ -24,9 +24,13 @@
 						<div class="teaserBox noPrint">
 						<h2>Weitere Inhalte</h2>
 							<div id="nav-timeline-right" class="content noMargin">
+							<?php $page = get_query_var('paged'); if ($page == $wp_query->max_num_pages) : ?> 
 								<a class="blockLink singleArrow nav-previous" href="<?php echo get_next_posts_link();?>">&Auml;ltere Beitr&auml;ge</a>
+							<?php endif;
+							if ($page > 1) : ?>	
 								<a class="blockLink singleArrow nav-next" href="<?php get_previous_posts_link();?>">Neuere Beitr&auml;ge</a>
-								<div class="blockLink">(Seite <?php $page = get_query_var('paged'); echo ($page == 0) ? 1 : $page; ?> von <?php echo $wp_query->max_num_pages; ?>)</div>
+							<?php endif; ?>
+								<div class="blockLink singleArrow">(Seite <?php echo ($page == 0) ? 1 : $page; ?> von <?php echo $wp_query->max_num_pages; ?>)</div>
 							</div>
 						</div>
 <?php endif; ?>

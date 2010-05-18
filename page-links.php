@@ -21,7 +21,7 @@
 					);
 	foreach ( $cats as $cid => $catname ) {
 ?>
-						<div class="content" id="link-<?php echo $cid; ?>">
+						<div class="newsDetail" id="link-<?php echo $cid; ?>">
 							<h3><?php echo $catname ?></h3>
 							<ul>
 							<?php get_links( $cid, '<li>', '</li>', '<br />', false, 'name', true, false ); ?>

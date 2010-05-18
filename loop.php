@@ -22,7 +22,7 @@
 		</div>
 	</div>
 <?php endif; ?>
-<?php while ( have_posts() ) : the_post(); /* Start the Loop */?>
+<?php while ( have_posts() ) : the_post(); update_post_caches($posts); /* Start the Loop */?>
 <?php /* How to display posts in the Gallery Category -- TODO */ ?>
 	<?php if ( in_category( _x('gallery', 'gallery category slug', 'twentyten') ) ) : ?>
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

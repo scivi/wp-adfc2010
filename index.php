@@ -43,10 +43,14 @@ get_template_part( 'loop', 'index' ); // all stuff
 						<div class="printFooter"><p>&copy; ADFC Sachsen-Anhalt e.V. <?php echo date('Y'); ?></p></div>
 					</div>
 					<div class="rightCol">
-<?php /* Display navigation to next/previous pages when applicable */ ?>
-<?php if ( $wp_query->max_num_pages > 1 ) : ?>
+<?php /* Display navigation to next/previous pages when applicable */ 
+	$children = wp_list_pages('title_li=&child_of='.remember('the_id').'&echo=0');
+	$has_pages = $wp_query->max_num_pages > 1
+?>
+<?php if ($has_pages || $children) : ?>
 						<div class="teaserBox noPrint">
-						<h2>Weitere Inhalte (Seite <?php echo ($paged == 0) ? 1 : $paged; ?>/<?php echo $wp_query->max_num_pages; ?>)</h2>
+						<h2>Weitere Inhalte <?php if ($has_pages) { ?>(Seite  ($paged == 0) ? 1 : $paged; ?>/<?php echo $wp_query->max_num_pages; ?>)<?php } ?></h2>
+						<?php if ($has_pages) : ?>
 							<div id="nav-timeline-right" class="content noMargin">
 							<?php global $paged; if ($paged < $wp_query->max_num_pages) : ?> 
 								<a class="blockLink singleArrow nav-older" href="<?php next_posts();?>">&Auml;ltere Beitr&auml;ge</a>
@@ -55,6 +59,12 @@ get_template_part( 'loop', 'index' ); // all stuff
 								<a class="blockLink singleArrow nav-younger" href="<?php previous_posts();?>">Neuere Beitr&auml;ge</a>
 							<?php endif; ?>
 							</div>
+						<?php endif;
+						if ($children) : ?>
+							<div id="subpages" class="content noMargin">
+								<ul><?php echo $children; ?></ul>
+							</div>
+						<?php endif; ?>
 						</div>
 <?php endif; ?>
 						<div class="teaserBox noPrint">

@@ -21,6 +21,9 @@
 						</ul>
 					</li>
 <?php endif; // end default primary widget area ?>
+<?php if is_category('termin') : ?>
+					<?php ec3_calendar() ?>
+<?php endif; ?>
 					</ul>
 				</div>
 			</div>

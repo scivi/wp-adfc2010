@@ -479,7 +479,8 @@ li#event-calendar {
 	border-bottom:			1px solid white;
 }
 
-li#event-calendar h3 {
+li#event-calendar h3,
+li#gdtttermslist-3 h3 {
 	display:			block;
 	margin:				0;
 	font-style:			normal;

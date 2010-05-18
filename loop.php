@@ -122,8 +122,6 @@
 					);
 				?>
 			</div>
-		<?php else : ?>
-			<?php remember('id', array(get_the_ID())); ?>
 		<?php endif; ?>
 		<?php if ( is_archive() || is_search() ) : // Only display Excerpts for archives & search ?>
 			<?php remember('id', array('none')); ?>
@@ -151,7 +149,3 @@
 		?>
 	<?php endif; // if different categories queried ?>
 <?php endwhile; ?>
-
-<!--
-<?php $f = remember('id'); var_dump($f); ?> 
--->

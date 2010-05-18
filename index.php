@@ -46,7 +46,8 @@ get_template_part( 'loop', 'index' ); // all stuff
 <?php /* Display navigation to next/previous pages when applicable */
 	$children_for = array_shift(remember('id'));
 	if (is_numeric($children_for)) { $children = wp_list_pages("title_li=&child_of=${children_for}&echo=0"); }
-	else { print_r($children_for); $children = false; }
+	else { $children = false; }
+	// TODO: siblings
 	$has_pages = $wp_query->max_num_pages > 1;
 ?>
 <?php if ($has_pages || $children) : ?>

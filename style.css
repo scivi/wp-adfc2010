@@ -501,6 +501,8 @@ body {
 
 .footer ul {
 	list-style-type:		none;
+}
+.footer ul, .footer div {
 	display: 			inline;
 }
 .footer ul li {

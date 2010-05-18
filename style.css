@@ -322,6 +322,12 @@ li.meta_enhanced {
 	margin: 0 0;
 }
 
+address {
+	display:			block;
+	margin:				6px 0 0 12px;
+	min-height:			24px;
+}
+
 #searchform {
 	background:			white;
 	border-bottom:			1px solid white;

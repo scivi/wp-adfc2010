@@ -21,13 +21,11 @@
 			single_post_title(); echo ' | '; bloginfo( 'name' );
 		} elseif ( is_home() || is_front_page() ) {
 			bloginfo( 'name' ); 
-			if( get_bloginfo( 'description' ) ) 
-				echo ' | ' ; bloginfo( 'description' ); 
-			adfc2010_the_page_number();
+			echo ' | Die Interessenvertretung für Radfahrer in Sachsen-Anhalt' 
 		} elseif ( is_page() ) {
 			single_post_title( '' ); echo ' | '; bloginfo( 'name' );
 		} elseif ( is_search() ) {
-			printf( __( 'Search results for "%s"', 'adfc2010' ), get_search_query() ); adfc2010_the_page_number(); echo ' | '; bloginfo( 'name' );
+			printf( 'Suchergebnisse nach "%s"', get_search_query()); adfc2010_the_page_number(); echo ' | '; bloginfo( 'name' );
 		} elseif ( is_404() ) {
 			_e( 'Not Found', 'adfc2010' ); echo ' | '; bloginfo( 'name' );
 		} else {

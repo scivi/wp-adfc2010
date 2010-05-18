@@ -106,7 +106,6 @@
 	<?php else : ?>
 		<div class="newsTeaser" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<h1><a href="<?php the_permalink(); ?>" title="<?php printf(esc_attr__('Permalink zu %s', 'twentyten'), the_title_attribute('echo=0')); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
-			
 			<div class="entry-meta">
 				<?php
 					printf('<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a>. <span class="meta-sep"> Von </span> <span class="author vcard"><a class="url fn n" href="%4$s" title="%5$s">%6$s</a></span>',
@@ -119,7 +118,6 @@
 					);
 				?> 
 			</div>
-
 	<?php if ( is_archive() || is_search() ) : // Only display Excerpts for archives & search ?>
 			<div class="rubricList">
 				<?php the_excerpt('Weiterlesen <span class="meta-nav">&rarr;</span>'); ?>
@@ -134,8 +132,8 @@
 		global $categories, $tags, $editlink;
 		if (! is_array($categories))	$categories = array();
 		if (! is_array($tags)) 			$tags = array();
-		$categories = array_merge($categories, get_the_category());
-		$tags = array_merge($categories, get_the_tags());
+		$categories += get_the_category() || array();
+		$tags += get_the_tags() || array();
 		
 		if (! (is_archive() && is_search())) $editlink = get_edit_post_link('Bearbeiten');
 	?>
@@ -149,9 +147,11 @@
 				<?php edit_post_link('Bearbeiten', '<span class="meta-sep">|</span> <span class="edit-link">', '</span>' ); ?>
 			</div>
 		</div><!-- #post-<?php the_ID(); ?> -->
-
 		<?php // comments_template( '', true ); 
 		?>
-
 	<?php endif; // if different categories queried ?>
 <?php endwhile; ?>
+<?php
+	$categories = array_unique($categories);
+	$tags = array_unique($tags);
+?>

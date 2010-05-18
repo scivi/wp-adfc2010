@@ -124,10 +124,12 @@
 			</div>
 		<?php endif; ?>
 		<?php if ( is_archive() || is_search() ) : // Only display Excerpts for archives & search ?>
+			<?php remember('the_id', 'none'); ?>
 			<div <?php post_class(); ?><?php // echo (!is_single()) ? 'class="content" ' : 'class="noMargin"' ?>>
 				<?php the_content('Mehr zu &raquo;' . get_the_title() . '&laquo;'); ?>
 			</div>
 		<?php else : ?>
+			<?php remember('the_id', get_the_ID()); ?>
 			<div <?php post_class(); ?><?php // class="content <?php echo is_single() ? 'noMargin"' : '"' ?>>
 				<?php the_content('Mehr zu &raquo;' . get_the_title() . '&laquo;'); ?>
 				<?php wp_link_pages(array('before' => '<div class="page-link">Seiten:', 'after' => '</div>')); ?>
@@ -136,7 +138,6 @@
 		<?php // for the right sidebar; comes after the loop
 			remember('categories', get_the_category());
 			remember('tags', get_the_tags());
-			if (!is_archive() && !is_search()) remember('the_id', get_the_ID()); else remember('the_id', 'none');
 		?>
 			<div class="entry-utility hidden">
 				<span class="comments-link">
@@ -148,3 +149,7 @@
 		?>
 	<?php endif; // if different categories queried ?>
 <?php endwhile; ?>
+
+<!--
+<?php print_r(remember('the_id')); ?> 
+-->

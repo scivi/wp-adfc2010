@@ -34,7 +34,7 @@
 							<h2>Verwandte Themen</h2>
 							<div class="content noMargin">
 								<?php foreach($categories as $cat) {
-									echo '<a href="' . get_category_link($cat->cat_ID) "\">$cat->cat_name</a>";
+									echo '<a href="' . get_category_link($cat->cat_ID) . "\">$cat->cat_name</a>";
 								}; ?>
 							</div>
 						</div>

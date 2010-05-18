@@ -53,10 +53,18 @@
 							</div>
 						</div>
 <?php endif; ?>
-					<?php edit_post_link('Bearbeiten', 
-						'<div class="teaserBox noPrint"><h2>Admin</h2><div class="content noMargin"><div class="blockLink singleArrow edit-link">', 
-						'</div></div></div>',
-						array_shift(remember('the_id'))); ?>
+						<?php edit_post_link('Bearbeiten', 
+							'<div class="teaserBox noPrint"><h2>Admin</h2><div class="content noMargin"><div class="blockLink singleArrow edit-link">', 
+						'	</div>',
+							array_shift(remember('the_id')));
+						?>
+								<div id="secondary" class="widget-area">
+									<ul class="xoxo navigation">
+										<?php dynamic_sidebar( 'secondary-widget-area' ); ?>
+									</ul>
+								</div>
+							</div>
+						</div>
 					</div>
 					<div class="clearer"></div>
 				</div>

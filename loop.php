@@ -129,14 +129,9 @@
 			</div>
 	<?php endif; ?>
 	<?php // for the right sidebar; comes after the loop
-		global $categories, $tags, $editlink;
-		if (! is_array($categories))	$categories = array();
-		if (! is_array($tags)) 			$tags = array();
-		$thiscats = get_the_category();
-		$thistags = get_the_tags();
-		if (is_array($thiscats))	$categories = array_merge($categories, $thiscats);
-		if (is_array($thistags))	$tags 		= array_merge($tags, $thistags);
-		
+		remember_categories();
+		remember_tags();
+		global $editlink;
 		if (! (is_archive() && is_search())) $editlink = get_edit_post_link('Bearbeiten');
 	?>
 			<div class="entry-utility">

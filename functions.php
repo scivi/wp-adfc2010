@@ -284,3 +284,25 @@ function is_page_by_slug( $slug ) {
     $page = get_page_by_path( $slug );
     return ($page ? is_page( $page->ID ) : false);
 }
+
+function remember_categories($these) {
+	static $categories;
+	if (! is_array($categories)) $categories = array();
+	if (is_array($these)) $categories = array_merge($categories, $these);
+	return $categories;
+}
+
+function remember_tags($these) {
+	static $tags;
+	if (! is_array($tags)) $tags = array();
+	if (is_array($these))  $tags = array_merge($tags, $these);
+	return $tags;
+}
+
+function uniq_objects($ary, $id_field) {
+	$uniq = array()
+	foreach ($ary as $obj) {
+		$uniq[$cat->$id_field] = $obj;
+	}
+	return $uniq;
+}

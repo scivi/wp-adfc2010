@@ -473,7 +473,9 @@ body {
 }
 
 #wp-calendar {
-	margin:				0 0 0 13px;
+	margin:				0 0 0 20px;
+}
+li#event-calendar {
 	border-bottom:			1px solid white;
 }
 

@@ -131,7 +131,7 @@
 	<?php // for the right sidebar; comes after the loop
 		remember('categories', get_the_category());
 		remember('tags', get_the_tags());
-		if (!is_archive() && !is_search())) remember('the_id', get_the_ID());
+		if (!is_archive() && !is_search()) remember('the_id', get_the_ID());
 	?>
 			<div class="entry-utility">
 				<?php // <span class="comments-link">

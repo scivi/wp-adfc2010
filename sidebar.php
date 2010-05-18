@@ -23,12 +23,4 @@
 <?php endif; // end default primary widget area ?>
 					</ul>
 				</div>
-
-<?php if ( is_active_sidebar( 'secondary-widget-area' ) ) : // Nothing here by default and design ?>
-				<div id="secondary" class="widget-area">
-					<ul class="xoxo navigation">
-						<?php dynamic_sidebar( 'secondary-widget-area' ); ?>
-					</ul>
-				</div>
-<?php endif; ?>
 			</div>

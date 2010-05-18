@@ -643,6 +643,8 @@ li.meta_enhanced {
 
 #secondary ul {
 	list-style-type:		none;
+	margin:				0;
+	padding: 			0;
 }
 
 .navigation ul li a:hover, .navigation ul li a:active, .navigation ul li.current-menu-item a:link, .navigation ul li.current-menu-item a:hover, .navigation ul li.current-menu-item a:active, .navigation ul li.current-menu-item a:visited {

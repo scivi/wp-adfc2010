@@ -91,6 +91,7 @@ a.arrowTop:link, a.arrowTop:hover, a.arrowTop:active, a.arrowTop:visited {
 }
 
 div.blockLink a:link, div.blockLink a:hover, div.blockLink a:active, div.blockLink a:visited,
+div#secondary a:link, div#secondary a:hover, div#secondary a:active, div#secondary a:visited,
 a.blockLink:link, a.blockLink:hover, a.blockLink:active, a.blockLink:visited, a.blockLinkActive:link, a.blockLinkActive:hover, a.blockLinkActive:active, a.blockLinkActive:visited {
 	background-position:		2px center;
 	background-repeat:		no-repeat;
@@ -638,6 +639,10 @@ li.meta_enhanced {
 .navigation .widget_nav_menu h3.widget-title,
 #secondary h3.widget-title {
 	display: none;
+}
+
+#secondary ul {
+	list-style-type:		none;
 }
 
 .navigation ul li a:hover, .navigation ul li a:active, .navigation ul li.current-menu-item a:link, .navigation ul li.current-menu-item a:hover, .navigation ul li.current-menu-item a:active, .navigation ul li.current-menu-item a:visited {

@@ -50,11 +50,11 @@
 							</div>
 						</div>
 <?php endif; ?>
-<?php if (remember('editlink')) : ?>
+<?php if ($editlink = remember('editlink')) : ?>
 						<div class="teaserBox noPrint">
 							<h2>Admin</h2>
 							<div class="content noMargin">
-								 <div class="blockLink singleArrow edit-link">'<?php echo remember('editlink')[0]; ?></div>
+								 <div class="blockLink singleArrow edit-link">'<?php echo $editlink[0]; ?></div>
 							</div>
 						</div>
 <?php endif; ?>

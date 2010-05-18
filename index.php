@@ -29,6 +29,7 @@
 							</div>
 						</div>
 <?php endif; ?>
+<?php global $categories, $tags, $editlink; ?>
 						<div class="teaserBox noPrint">
 							<h2>Verwandte Themen</h2>
 							<div class="content noMargin">

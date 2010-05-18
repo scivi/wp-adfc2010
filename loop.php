@@ -135,6 +135,7 @@
 			</div>
 	<?php endif; ?>
 	<?php // for the right sidebar; comes after the loop
+		global $categories, $tags, $editlink;
 		$categories = get_the_category(', ');
 		$tags = get_the_tags('', ', ', '<br/>');
 		$editlink = get_edit_post_link('Bearbeiten', '<span class="edit-link">', '</span>' );

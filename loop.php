@@ -17,13 +17,12 @@
 	<div id="post-0" class="post error404 not-found">
 		<h1 class="entry-title">Oh! Leider nichts gefunden.</h1>
 		<div class="entry-content">
-			<p>Zu dieser Kategorie oder zu diesem Stichwort gibt es derzeit keine Beiträge. Vielleicht kann Ihnen die Suchfunktion weiterhelfen?</p>
-			<?php get_search_form(); ?>
+			<p>Es sind keine passenden Beiträge oder Termine vorhanden.
+			 Vielleicht kann Ihnen die Suchfunktion oben links weiterhelfen?</p>
 		</div>
 	</div>
 <?php endif; ?>
-<?php /* Start the Loop */ ?>
-<?php while ( have_posts() ) : the_post(); ?>
+<?php while ( have_posts() ) : the_post(); /* Start the Loop */?>
 <?php /* How to display posts in the Gallery Category -- TODO */ ?>
 	<?php if ( in_category( _x('gallery', 'gallery category slug', 'twentyten') ) ) : ?>
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -149,7 +148,3 @@
 		?>
 	<?php endif; // if different categories queried ?>
 <?php endwhile; ?>
-<?php
-	//$categories = array_unique($categories);
-	//$tags = array_unique($tags);
-?>

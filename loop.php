@@ -123,17 +123,15 @@
 				?>
 			</div>
 		<?php else : ?>
-			<?php remember('id', get_the_ID()); ?>
-			<?php global $id; remember('id', $id); ?>
-			<?php remember('id', 'foo'); ?>
+			<?php remember('id', array(get_the_ID())); ?>
 		<?php endif; ?>
 		<?php if ( is_archive() || is_search() ) : // Only display Excerpts for archives & search ?>
-			<?php remember('id', 'none'); ?>
+			<?php remember('id', array('none')); ?>
 			<div <?php post_class(); ?><?php // echo (!is_single()) ? 'class="content" ' : 'class="noMargin"' ?>>
 				<?php the_content('Mehr zu &raquo;' . get_the_title() . '&laquo;'); ?>
 			</div>
 		<?php else : ?>
-			<?php remember('id', get_the_ID()); ?>
+			<?php remember('id', array(get_the_ID())); ?>
 			<div <?php post_class(); ?><?php // class="content <?php echo is_single() ? 'noMargin"' : '"' ?>>
 				<?php the_content('Mehr zu &raquo;' . get_the_title() . '&laquo;'); ?>
 				<?php wp_link_pages(array('before' => '<div class="page-link">Seiten:', 'after' => '</div>')); ?>

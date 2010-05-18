@@ -3,12 +3,34 @@
 			<div class="rightCol printRightCol">
 				<div class="metaNav"><?php wp_nav_menu( array( 'sort_column' => 'menu_order' /*, 'container_class' => 'metaNav' */) ); ?></div>
 				<div class="breadcrumb"><p class="noMargin">
-<?php if ( is_home() || is_front_page() ) { ?>
+<?php if (is_home() || is_front_page()) : ?>
 					<strong>Aktuelles vom ADFC Sachsen-Anhalt e.V.</strong>
-<?php } else { if(function_exists('bcn_display')) { bcn_display(); } } ?>
+<?php elseif(function_exists('bcn_display')) : bcn_display(); endif; ?>
 				</p></div>
 				<div class="content">
 					<div class="leftCol">
+<?php 
+	// feature
+	if (is_home() || is_front_page()) :
+		$featuredPosts = new WP_Query();
+		$featuredPosts->query('showposts=1&cat=42');
+		while ( $featuredPosts->have_posts() : $featuredPosts->the_post(); ?>
+						<div class="newsTeaser"><h1><a rel="bookmark" href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
+							<div class="entry-meta"><?php
+									printf('<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a>. <span class="meta-sep"> Von </span> <span class="author vcard"><a class="url fn n" href="%4$s" title="%5$s">%6$s</a></span>',
+										get_permalink(),
+										esc_attr( get_the_time() ),
+										get_the_date(),
+										get_author_posts_url(get_the_author_meta('ID')),
+										sprintf( esc_attr__('Alle Beiträge von %s zeigen', 'twentyten'), get_the_author()),
+										get_the_author()
+									);
+							?></div>
+							<div <?php post_class(); ?>>
+								<?php the_excerpt('Mehr zu &raquo;' . get_the_title() . '&laquo;'); ?>
+							</div>
+						</div>
+<?php endwhile; // feature ?>
 <?php get_template_part( 'loop', 'index' ); ?>
 						<div class="bottomLinks">
 							<div class="leftCol"><p><a href="javascript:history.back();" class="arrowLeft" title="Springt zur vorherigen Seite zurück">zur&uuml;ck</a></p></div>

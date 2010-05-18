@@ -96,7 +96,7 @@ a.arrowTop:link, a.arrowTop:hover, a.arrowTop:active, a.arrowTop:visited {
 
 div.blockLink a:link, div.blockLink a:hover, div.blockLink a:active, div.blockLink a:visited,
 div#secondary a:link, div#secondary a:hover, div#secondary a:active, div#secondary a:visited,
-div#subpages li.page_item a:link, div#subpages li.page_item a:link:hover, div#subpages li.page_item a:active:visited,
+div#subpages li.page_item a:link, div#subpages li.page_item a:hover, div#subpages li.page_item a:active, div#subpages li.page_item a:visited,
 a.blockLink:link, a.blockLink:hover, a.blockLink:active, a.blockLink:visited, a.blockLinkActive:link, a.blockLinkActive:hover, a.blockLinkActive:active, a.blockLinkActive:visited {
 	background-position:		2px center;
 	background-repeat:		no-repeat;
@@ -109,11 +109,11 @@ a.blockLink:link, a.blockLink:hover, a.blockLink:active, a.blockLink:visited, a.
 }
 
 div#subpages li.page_item a:active, div#subpages li.page_item a:hover,
-a.blockLink:hover, a.blockLink:active, a.blockLinkActive:link, a.blockLinkActive:hover, a.blockLinkActive:active,a.blockLinkActive:visited {
+a.blockLink:hover, a.blockLink:active, a.blockLinkActive:link, a.blockLinkActive:hover, a.blockLinkActive:active, a.blockLinkActive:visited {
 	background-color:		#edf4fa;
 }
 
-div#subpages li.page_item a,
+div#subpages li.page_item a:link, div#subpages li.page_item a:hover, div#subpages li.page_item a:active, 
 a.singleArrow:link, a.singleArrow:hover, a.singleArrow:active, a.singleArrow:visited, a.singleArrowActive:link, a.singleArrowActive:hover, a.singleArrowActive:active, a.singleArrowActive:visited {
 	background-image:		url(gfx/arrow_right_normal.gif);
 }
@@ -130,7 +130,7 @@ div#subpages li.page_item, div#subpages li.current_page_item {
 div#subpages li.page_item, div#subpages li.current_page_item {
 	display: 			block;
 	background-repeat: 		none;
-	margin:				0;
+	padding:			0;
 }
 
 a.iconPrint:link, a.iconPrint:hover, a.iconPrint:active, a.iconPrint:visited {

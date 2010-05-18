@@ -4,7 +4,7 @@
 			<div class="clearer"></div>
 		</div>
 		<div class="footer">
-			<p class="noMargin noPrint leftish">&copy; ADFC Sachsen-Anhalt <?php echo date('Y'); ?> &ndash;</p>
+			<p class="noMargin noPrint leftish">&copy; ADFC Sachsen-Anhalt <?php echo date('Y'); ?> &ndash;&nbsp;</p>
 			<ul class="noMargin noPadding noPrint leftish"><li><a href="/">Home</a></li><?php dynamic_sidebar( 'footer-widget-area' ); ?></ul>
 		</div>
 		<?php wp_footer(); ?>

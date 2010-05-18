@@ -1,6 +1,6 @@
 <?php
 /**
- * TwentyTen functions and definitions
+ * ADFC TwentyTen functions and definitions
  *
  * Sets up the theme and provides some helper functions. Some helper functions
  * are used in the theme as custom template tags. Others are attached to action and
@@ -34,7 +34,7 @@
  * For more information on hooks, see http://codex.wordpress.org/Plugin_API.
  *
  * @package WordPress
- * @subpackage Twenty Ten
+ * @subpackage ADFC Twenty Ten
  * @since 3.0.0
  */
 
@@ -87,7 +87,8 @@ function adfc2010_setup() {
 
 	// Make theme available for translation
 	// Translations can be filed in the /languages/ directory
-	load_theme_textdomain( 'adfc2010', TEMPLATEPATH . '/languages' );
+	//load_theme_textdomain( 'adfc2010', TEMPLATEPATH . '/languages' );
+	load_theme_textdomain( 'twentyten', TEMPLATEPATH . '/languages' );
 
 	$locale = get_locale();
 	$locale_file = TEMPLATEPATH . "/languages/$locale.php";
@@ -110,7 +111,7 @@ if ( ! function_exists( 'adfc2010_the_page_number' ) ) :
 function adfc2010_the_page_number() {
 	global $paged; // Contains page number.
 	if ( $paged >= 2 )
-		echo ' | ' . sprintf( __( 'Seite %s' , 'adfc2010' ), $paged );
+		echo ' | ' . sprintf('Seite %s', $paged);
 }
 endif;
 
@@ -137,7 +138,7 @@ add_filter( 'excerpt_length', 'adfc2010_excerpt_length' );
  * @return string A pretty 'Continue reading' link.
  */
 function adfc2010_excerpt_more( $more ) {
-	return ' &hellip; <a href="'. get_permalink() . '">' . __('Weiterlesen <span class="meta-nav">&rarr;</span>', 'adfc2010') . '</a>';
+	return ' &hellip; <a href="'. get_permalink() . '">Weiterlesen <span class="meta-nav">&rarr;</span></a>';
 }
 add_filter( 'excerpt_more', 'adfc2010_excerpt_more' );
 
@@ -171,25 +172,25 @@ function adfc2010_comment( $comment, $args, $depth ) {
 		<div id="comment-<?php comment_ID(); ?>">
 		<div class="comment-author vcard">
 			<?php echo get_avatar( $comment, 40 ); ?>
-			<?php printf( __( '<cite class="fn">%s</cite> <span class="says">says:</span>', 'adfc2010' ), get_comment_author_link() ); ?>
+			<?php printf('<cite class="fn">%s</cite> <span class="says">kommentiert:</span>', get_comment_author_link()); ?>
 		</div>
 		<?php if ( $comment->comment_approved == '0' ) : ?>
 			<em><?php _e( 'Your comment is awaiting moderation.', 'adfc2010' ); ?></em>
 			<br />
 		<?php endif; ?>
-
-		<div class="comment-meta commentmetadata"><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><?php printf( __( '%1$s at %2$s', 'adfc2010' ), get_comment_date(),  get_comment_time() ); ?></a><?php edit_comment_link( __( '(Edit)', 'adfc2010' ), ' ' ); ?></div>
-
+		<div class="comment-meta commentmetadata">
+			<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><?php printf('%1$s', get_comment_date()); ?></a>
+			<?php edit_comment_link('(Bearbeiten)', ' '); ?>
+		</div>
 		<div class="comment-body"><?php comment_text(); ?></div>
-
 		<div class="reply">
-			<?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+			<?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ))); ?>
 		</div>
 	</div>
 
 	<?php else : ?>
 	<li class="post pingback">
-		<p><?php _e( 'Pingback:', 'adfc2010' ); ?> <?php comment_author_link(); ?><?php edit_comment_link ( __('(Edit)', 'adfc2010'), ' ' ); ?></p>
+		<p><?php _e( 'Pingback:', 'adfc2010' ); ?> <?php comment_author_link(); ?><?php edit_comment_link ('(Bearbeiten)', ' '); ?></p>
 	<?php endif;
 }
 endif;
@@ -204,9 +205,9 @@ endif;
 function adfc2010_widgets_init() {
 	// Area 1
 	register_sidebar( array (
-		'name' => __( 'Primary Widget Area', 'adfc2010' ),
+		'name' => 'Erster Widget-Bereich',
 		'id' => 'primary-widget-area',
-		'description' => __( 'The primary widget area', 'adfc2010' ),
+		'description' => 'Der 1. Widget-Bereich, in der Sidebar oben',
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 		'after_widget' => "</li>",
 		'before_title' => '<h3 class="widget-title">',
@@ -215,9 +216,9 @@ function adfc2010_widgets_init() {
 
 	// Area 2
 	register_sidebar( array (
-		'name' => __( 'Secondary Widget Area', 'adfc2010' ),
+		'name' => 'Zweiter Widget-Bereich',
 		'id' => 'secondary-widget-area',
-		'description' => __( 'The secondary widget area', 'adfc2010' ),
+		'description' => 'Der 2. Widget-Bereich, in der Sidebar unten.',
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 		'after_widget' => "</li>",
 		'before_title' => '<h3 class="widget-title">',
@@ -226,15 +227,16 @@ function adfc2010_widgets_init() {
 
 	// Area 3
 	register_sidebar( array (
-		'name' => __( 'First Footer Widget Area', 'adfc2010' ),
-		'id' => 'first-footer-widget-area',
-		'description' => __( 'The first footer widget area', 'adfc2010' ),
+		'name' => 'Footer Widget Area',
+		'id' => 'footer-widget-area',
+		'description' => 'Der Widget-Bereich im Seitenfuß',
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 		'after_widget' => "</li>",
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
 
+/*
 	// Area 4
 	register_sidebar( array (
 		'name' => __( 'Second Footer Widget Area', 'adfc2010' ),
@@ -245,28 +247,7 @@ function adfc2010_widgets_init() {
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
-
-	// Area 5
-	register_sidebar( array (
-		'name' => __( 'Third Footer Widget Area', 'adfc2010' ),
-		'id' => 'third-footer-widget-area',
-		'description' => __( 'The third footer widget area', 'adfc2010' ),
-		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-		'after_widget' => "</li>",
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	) );
-
-	// Area 6
-	register_sidebar( array (
-		'name' => __( 'Fourth Footer Widget Area', 'adfc2010' ),
-		'id' => 'fourth-footer-widget-area',
-		'description' => __( 'The fourth footer widget area', 'adfc2010' ),
-		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-		'after_widget' => "</li>",
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	) );
+*/
 }
 add_action( 'init', 'adfc2010_widgets_init' );
 
@@ -296,4 +277,10 @@ function adfc2010_get_next_attachment_url() {
 		return get_attachment_link( $attachments[ $k ]->ID );
 	else
 		return get_permalink( $post->post_parent );
+}
+
+// cf. http://lists.automattic.com/pipermail/wp-testers/2010-May/012932.html
+function is_page_by_slug( $slug ) {
+    $page = get_page_by_path( $slug );
+    return ($page ? is_page( $page->ID ) : false);
 }

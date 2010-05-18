@@ -108,8 +108,8 @@
 <?php /* How to display all other posts */ ?>
 	<?php else : ?>
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-			<h1><a href="<?php the_permalink(); ?>" title="<?php printf(esc_attr__('Permalink zu %s', 'twentyten'), the_title_attribute('echo=0')); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
-
+			<h1><?php the_title(); ?></h1>
+			
 			<div class="entry-meta">
 				<?php
 					printf('<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a>. <span class="meta-sep"> Von </span> <span class="author vcard"><a class="url fn n" href="%4$s" title="%5$s">%6$s</a></span>',
@@ -120,7 +120,8 @@
 						sprintf( esc_attr__('Alle Beiträge von %s zeigen', 'twentyten'), get_the_author()),
 						get_the_author()
 					);
-				?>
+				?><br/>
+				<a href="<?php the_permalink(); ?>" title="<?php printf(esc_attr__('Permalink zu %s', 'twentyten'), the_title_attribute('echo=0')); ?>" rel="bookmark"><?php the_title(); ?></a>
 			</div>
 
 	<?php if ( is_archive() || is_search() ) : // Only display Excerpts for archives & search ?>
@@ -134,8 +135,8 @@
 			</div>
 	<?php endif; ?>
 	<?php // for the right sidebar; comes after the loop
-		$categories = get_category(', ');
-		$tags = get_tags('', ', ', '<br/>');
+		$categories = get_the_category(', ');
+		$tags = get_thetags('', ', ', '<br/>');
 		$editlink = get_edit_post_link('Bearbeiten', '<span class="edit-link">', '</span>' );
 	?>
 

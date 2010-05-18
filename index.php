@@ -25,7 +25,7 @@
 						<h2>Weitere Inhalte</h2>
 							<div id="nav-timeline-right" class="content noMargin">
 							<?php global $paged; if ($paged == $wp_query->max_num_pages) : ?> 
-								<a class="blockLink singleArrow nav-older" href="<?php echo next_posts();?>">&Auml;ltere Beitr&auml;ge</a>
+								<a class="blockLink singleArrow nav-older" href="<?php next_posts();?>">&Auml;ltere Beitr&auml;ge</a>
 							<?php endif;
 							if ($paged > 1) : ?>	
 								<a class="blockLink singleArrow nav-younger" href="<?php previous_posts();?>">Neuere Beitr&auml;ge</a>

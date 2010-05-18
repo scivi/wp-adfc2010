@@ -506,6 +506,7 @@ body {
 .footer p {
 	padding:			0 0 0 15%;
 	width:				25%;
+	text-align:			right;
 }
 
 .footer ul {
@@ -515,6 +516,7 @@ body {
 .footer ul.leftish {
 	width:				55%;
 	display: 			inline-block;
+	text-align:			left;
 }
 
 .footer ul, .footer div {

@@ -146,6 +146,10 @@ a.iconPrint:link, a.iconPrint:hover, a.iconPrint:active, a.iconPrint:visited {
 	padding:			0;
 }
 
+.hidden {
+	display:			none;
+}
+
 .printFooter {
 	display:			none;
 }

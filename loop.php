@@ -8,25 +8,22 @@
  * the tags used in it.
  *
  * @package WordPress
- * @subpackage Twenty Ten
+ * @subpackage ADFC Twenty Ten
  * @since 3.0.0
  */
 ?>
-
 <?php /* If there are no posts to display, such as an empty archive page */ ?>
 <?php if ( ! have_posts() ) : ?>
 	<div id="post-0" class="post error404 not-found">
-		<h1 class="entry-title"><?php _e( 'Not Found', 'twentyten' ); ?></h1>
+		<h1 class="entry-title">Oh! Leider nichts gefunden.</h1>
 		<div class="entry-content">
-			<p><?php _e( 'Apologies, but no results were found for the requested Archive. Perhaps searching will help find a related post.', 'twentyten' ); ?></p>
+			<p>Zu dieser Kategorie oder zu diesem Stichwort gibt es derzeit keine Beiträge. Vielleicht kann Ihnen die Suchfunktion weiterhelfen?</p>
 			<?php get_search_form(); ?>
-		</div><!-- .entry-content -->
-	</div><!-- #post-0 -->
+		</div>
+	</div>
 <?php endif; ?>
-
 <?php /* Start the Loop */ ?>
 <?php while ( have_posts() ) : the_post(); ?>
-
 <?php /* How to display posts in the Gallery Category -- TODO */ ?>
 	<?php if ( in_category( _x('gallery', 'gallery category slug', 'twentyten') ) ) : ?>
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -107,8 +104,8 @@
 
 <?php /* How to display all other posts */ ?>
 	<?php else : ?>
-		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-			<h1><?php the_title(); ?></h1>
+		<div class="newsTeaser" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+			<h1><a href="<?php the_permalink(); ?>" title="<?php printf(esc_attr__('Permalink zu %s', 'twentyten'), the_title_attribute('echo=0')); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 			
 			<div class="entry-meta">
 				<?php
@@ -121,7 +118,6 @@
 						get_the_author()
 					);
 				?> 
-				<span class="permalink">[<a href="<?php the_permalink(); ?>" title="<?php printf(esc_attr__('Permalink zu %s', 'twentyten'), the_title_attribute('echo=0')); ?>" rel="bookmark">Permalink</a>]</span>
 			</div>
 
 	<?php if ( is_archive() || is_search() ) : // Only display Excerpts for archives & search ?>
@@ -136,11 +132,13 @@
 	<?php endif; ?>
 	<?php // for the right sidebar; comes after the loop
 		global $categories, $tags, $editlink;
-		$categories = get_the_category(', ');
-		$tags = get_the_tags('', ', ', '<br/>');
-		$editlink = get_edit_post_link('Bearbeiten', '<span class="edit-link">', '</span>' );
+		if (! is_array($categories))	$categories = array();
+		if (! is_array($tags)) 			$tags = array();
+		$categories = array_merge($categories, get_the_category());
+		$tags = array_merge($categories, get_the_tags());
+		
+		if (! (is_archive() && is_search())) $editlink = get_edit_post_link('Bearbeiten');
 	?>
-
 			<div class="entry-utility">
 				<span class="cat-links"><?php the_category( ', ' ); ?></span>
 				<?php the_tags('<span class="tag-links"><span class="entry-utility-prep entry-utility-prep-tag-links">Stichworte </span>', ', ', '<span class="meta-sep"> | </span>'); ?>

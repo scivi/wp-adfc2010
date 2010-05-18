@@ -24,8 +24,9 @@
 						<div class="teaserBox noPrint">
 						<h2>Weitere Inhalte</h2>
 							<div id="nav-timeline-right" class="content noMargin">
-								<div class="nav-previous"><?php next_posts_link('<span class="meta-nav">&larr;</span> &Auml;ltere Beitr&auml;ge'); ?></div>
-								<div class="nav-next"><?php previous_posts_link('Neuere Beitr&auml;ge <span class="meta-nav">&rarr;</span>'); ?></div>
+								<span class="blockLink singleArrow nav-previous"><?php next_posts_link('<span class="meta-nav">&larr;</span> &Auml;ltere Beitr&auml;ge', ''); ?></span>
+								<span class="blockLink singleArrow nav-next"><?php previous_posts_link('Neuere Beitr&auml;ge <span class="meta-nav">&rarr;</span>'); ?></span>
+								<span class="blockLink">(Seite <?php echo $page ?> von <?php echo $wp_query->max_num_pages ?> Seiten)</span>
 							</div>
 						</div>
 <?php endif; ?>
@@ -52,7 +53,7 @@
 						<div class="teaserBox noPrint">
 							<h2>Admin</h2>
 							<div class="content noMargin">
-								<?php echo $editlink; ?>
+								 <span class="blockLink singleArrow edit-link">'<?php echo $editlink; ?></span>
 							</div>
 						</div>
 <?php endif; ?>

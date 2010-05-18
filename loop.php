@@ -122,6 +122,8 @@
 					);
 				?>
 			</div>
+		<?php else : ?>
+			<?php remember('the_id', get_the_ID()); ?>
 		<?php endif; ?>
 		<?php if ( is_archive() || is_search() ) : // Only display Excerpts for archives & search ?>
 			<?php remember('the_id', 'none'); ?>

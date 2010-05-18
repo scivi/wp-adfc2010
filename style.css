@@ -322,9 +322,12 @@ li.meta_enhanced {
 	margin: 0 0;
 }
 
-.main .rightCol .content .leftCol ul,
+.main .rightCol .content .leftCol ul {
+	list-style-type: 		circle;
+}
 .main .rightCol .content .leftCol ul li {
-	list-style-type: circle;
+	list-style-type: 		circle;
+	display:	 		list-item;
 }
 
 address {

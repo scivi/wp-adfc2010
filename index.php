@@ -22,7 +22,7 @@
 <?php /* Display navigation to next/previous pages when applicable */ ?>
 <?php if ( $wp_query->max_num_pages > 1 ) : ?>
 						<div class="teaserBox noPrint">
-						<h2>Weitere Inhalte (Seite <?php echo ($paged == 0) ? 1 : $paged; ?> von <?php echo $wp_query->max_num_pages; ?>)</h2>
+						<h2>Weitere Inhalte (Seite <?php echo ($paged == 0) ? 1 : $paged; ?>/<?php echo $wp_query->max_num_pages; ?>)</h2>
 							<div id="nav-timeline-right" class="content noMargin">
 							<?php global $paged; if ($paged < $wp_query->max_num_pages) : ?> 
 								<a class="blockLink singleArrow nav-older" href="<?php next_posts();?>">&Auml;ltere Beitr&auml;ge</a>

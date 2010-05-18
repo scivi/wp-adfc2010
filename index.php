@@ -27,7 +27,7 @@
 									);
 							?></div>
 							<div <?php post_class(); ?>>
-								<?php the_content('Mehr zu &raquo;' . get_the_title() . '&laquo;'); ?>
+								<?php the_excerpt('Mehr zu &raquo;' . get_the_title() . '&laquo;'); ?>
 							</div>
 						</div>
 <?php endwhile; endif; // feature

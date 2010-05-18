@@ -112,7 +112,7 @@ function adfc2010_the_page_number() {
 endif;
 
 /**
- * Sets the post excerpt length to 40 characters.
+ * Sets the post excerpt length.
  *
  * To override this length in a child theme, remove the filter and add your own
  * function tied to the excerpt_length filter hook.

@@ -13,7 +13,7 @@
 	// feature
 	if (is_home() || is_front_page()) :
 		$featuredPosts = new WP_Query();
-		$featuredPosts->query('showposts=2&cat=42');
+		$featuredPosts->query('posts_per_page=2&cat=42');
 		while ( $featuredPosts->have_posts()) : $featuredPosts->the_post(); ?>
 						<div class="newsTeaser"><h1><a rel="bookmark" href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
 							<div class="entry-meta"><?php
@@ -30,8 +30,9 @@
 								<?php the_content('Mehr zu &raquo;' . get_the_title() . '&laquo;'); ?>
 							</div>
 						</div>
-<?php endwhile; endif; // feature 
-get_template_part( 'loop', 'index' ); ?>
+<?php endwhile; endif; // feature
+get_template_part( 'loop', 'index' ); // all stuff
+?>
 						<div class="bottomLinks">
 							<div class="leftCol"><p><a href="javascript:history.back();" class="arrowLeft" title="Springt zur vorherigen Seite zurück">zur&uuml;ck</a></p></div>
 							<div class="middleCol"><p><a href="javascript:window.print()" class="iconPrint" title="Öffnet den Druckdialog des Browsers und druckt die aktuelle Seite ohne Kopfzeile und Navigation">Seite drucken</a></p></div>

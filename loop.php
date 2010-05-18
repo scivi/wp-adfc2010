@@ -124,6 +124,8 @@
 			</div>
 		<?php else : ?>
 			<?php remember('id', get_the_ID()); ?>
+			<?php global $id; remember('id', $id); ?>
+			<?php remember('id', 'foo'); ?>
 		<?php endif; ?>
 		<?php if ( is_archive() || is_search() ) : // Only display Excerpts for archives & search ?>
 			<?php remember('id', 'none'); ?>

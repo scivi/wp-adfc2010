@@ -131,16 +131,13 @@
 	<?php // for the right sidebar; comes after the loop
 		remember('categories', get_the_category());
 		remember('tags', get_the_tags());
-		if (! (is_archive() && is_search())) remember('editlink', get_edit_post_link('Bearbeiten'));
+		if (! (is_archive() || is_search())) remember('the_id', get_the_ID());
 	?>
 			<div class="entry-utility">
-				<span class="cat-links"><?php the_category( ', ' ); ?></span>
-				<?php the_tags('<span class="tag-links"><span class="entry-utility-prep entry-utility-prep-tag-links">Stichworte </span>', ', ', '<span class="meta-sep"> | </span>'); ?>
 				<?php // <span class="comments-link">
 				      // comments_popup_link( __( 'Leave a comment', 'twentyten' ), __( '1 Comment', 'twentyten' ), __( '% Comments', 'twentyten' ) ); 
 				      //</span>
 				?>
-				<?php edit_post_link('Bearbeiten', '<span class="meta-sep">|</span> <span class="edit-link">', '</span>' ); ?>
 			</div>
 		</div><!-- #post-<?php the_ID(); ?> -->
 		<?php // comments_template( '', true ); 

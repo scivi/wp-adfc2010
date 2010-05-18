@@ -50,14 +50,10 @@
 							</div>
 						</div>
 <?php endif; ?>
-<?php if ($editlink = remember('editlink')) : ?>
-						<div class="teaserBox noPrint">
-							<h2>Admin</h2>
-							<div class="content noMargin">
-								 <div class="blockLink singleArrow edit-link">'<?php echo $editlink[0]; ?></div>
-							</div>
-						</div>
-<?php endif; ?>
+					<?php edit_post_link('Bearbeiten', 
+						'<div class="teaserBox noPrint"><h2>Admin</h2><div class="content noMargin"><div class="blockLink singleArrow edit-link">', 
+						'</div></div></div>',
+						array_shift(remember('the_id'))); ?>
 					</div>
 					<div class="clearer"></div>
 				</div>

@@ -21,7 +21,7 @@
 			single_post_title(); echo ' | '; bloginfo( 'name' );
 		} elseif ( is_home() || is_front_page() ) {
 			bloginfo( 'name' ); 
-			echo ' | Die Interessenvertretung für Radfahrer in Sachsen-Anhalt' 
+			echo ' | Die Interessenvertretung für Radfahrer in Sachsen-Anhalt';
 		} elseif ( is_page() ) {
 			single_post_title( '' ); echo ' | '; bloginfo( 'name' );
 		} elseif ( is_search() ) {

@@ -120,11 +120,11 @@
 			</div>
 	<?php if ( is_archive() || is_search() ) : // Only display Excerpts for archives & search ?>
 			<div class="rubricList">
-				<?php the_excerpt('Mehr zu &raquo;' . get_the_title()); . '&laquo;'); ?>
+				<?php the_excerpt('Mehr zu &raquo;' . get_the_title() . '&laquo;'); ?>
 			</div>
 	<?php else : ?>
 			<div class="content">
-				<?php the_content('Mehr zu &raquo;' . get_the_title()); . '&laquo;'); ?>
+				<?php the_content('Mehr zu &raquo;' . get_the_title() . '&laquo;'); ?>
 				<?php wp_link_pages(array('before' => '<div class="page-link">Seiten:', 'after' => '</div>')); ?>
 			</div>
 	<?php endif; ?>

@@ -504,8 +504,8 @@ body {
 }
 
 .footer p {
-	padding:			0 0 0 20%;
-	width:				30%;
+	padding:			0 0 0 15%;
+	width:				25%;
 }
 
 .footer ul {
@@ -513,7 +513,7 @@ body {
 }
 
 .footer ul.leftish {
-	width:				49%;
+	width:				55%;
 	display: 			inline-block;
 }
 

@@ -24,9 +24,9 @@
 						<div class="teaserBox noPrint">
 						<h2>Weitere Inhalte</h2>
 							<div id="nav-timeline-right" class="content noMargin">
-								<span class="blockLink singleArrow nav-previous"><?php next_posts_link('<span class="meta-nav">&larr;</span> &Auml;ltere Beitr&auml;ge', ''); ?></span>
-								<span class="blockLink singleArrow nav-next"><?php previous_posts_link('Neuere Beitr&auml;ge <span class="meta-nav">&rarr;</span>'); ?></span>
-								<span class="blockLink">(Seite <?php echo get_query_var('paged'); ?> von <?php echo $wp_query->max_num_pages; ?> Seiten)</span>
+								<div class="blockLink singleArrow nav-previous"><?php next_posts_link('<span class="meta-nav">&larr;</span> &Auml;ltere Beitr&auml;ge', ''); ?></div>
+								<div class="blockLink singleArrow nav-next"><?php previous_posts_link('Neuere Beitr&auml;ge <span class="meta-nav">&rarr;</span>'); ?></div>
+								<p>(Seite <?php $page = get_query_var('paged'); echo ($page == 0) ? 1 : $page; ?> von <?php echo $wp_query->max_num_pages; ?>)</p>
 							</div>
 						</div>
 <?php endif; ?>

@@ -90,6 +90,7 @@ a.arrowTop:link, a.arrowTop:hover, a.arrowTop:active, a.arrowTop:visited {
 	padding-left:			17px;
 }
 
+div.blockLink a:link, div.blockLink a:hover, div.blockLink a:active, div.blockLink a:visited,
 a.blockLink:link, a.blockLink:hover, a.blockLink:active, a.blockLink:visited, a.blockLinkActive:link, a.blockLinkActive:hover, a.blockLinkActive:active, a.blockLinkActive:visited {
 	background-position:		2px center;
 	background-repeat:		no-repeat;

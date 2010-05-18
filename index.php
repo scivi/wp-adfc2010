@@ -44,8 +44,8 @@
 						<div class="teaserBox noPrint">
 							<h2>Stichworte</h2>
 							<div class="content noMargin">
-								<?php foreach(uniq_objects(remember('tags'), 'term_ID') as $tag) {
-									echo '<a class="blockLink singleArrow" href="' . get_tag_link($tag->term_ID) . "\">$tag->name</a>";
+								<?php foreach(uniq_objects(remember('tags'), 'term_id') as $tag) {
+									echo '<a class="blockLink singleArrow" href="' . get_tag_link($tag->term_id) . "\">$tag->name</a>";
 								}; ?>
 							</div>
 						</div>
@@ -54,7 +54,7 @@
 						<div class="teaserBox noPrint">
 							<h2>Admin</h2>
 							<div class="content noMargin">
-								 <div class="blockLink singleArrow edit-link">'<?php echo remember('editlink'); ?></div>
+								 <div class="blockLink singleArrow edit-link">'<?php echo remember('editlink')[0]; ?></div>
 							</div>
 						</div>
 <?php endif; ?>

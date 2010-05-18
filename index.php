@@ -14,7 +14,7 @@
 	if (is_home() || is_front_page()) :
 		$featuredPosts = new WP_Query();
 		$featuredPosts->query('showposts=1&cat=42');
-		while ( $featuredPosts->have_posts() : $featuredPosts->the_post(); ?>
+		while ( $featuredPosts->have_posts()) : $featuredPosts->the_post(); ?>
 						<div class="newsTeaser"><h1><a rel="bookmark" href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
 							<div class="entry-meta"><?php
 									printf('<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a>. <span class="meta-sep"> Von </span> <span class="author vcard"><a class="url fn n" href="%4$s" title="%5$s">%6$s</a></span>',

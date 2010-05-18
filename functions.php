@@ -72,7 +72,6 @@ if ( ! function_exists('adfc2010_setup') ):
  * @since 3.0.0
  */
 function adfc2010_setup() {
-
 	// This theme styles the visual editor with editor-style.css to match the theme style.
 	add_editor_style();
 
@@ -94,9 +93,6 @@ function adfc2010_setup() {
 	$locale_file = TEMPLATEPATH . "/languages/$locale.php";
 	if ( is_readable( $locale_file ) )
 		require_once( $locale_file );
-
-	// This theme allows users to set a custom background
-	add_custom_background();
 }
 endif;
 
@@ -140,7 +136,7 @@ add_filter( 'excerpt_length', 'adfc2010_excerpt_length' );
 function adfc2010_excerpt_more( $more ) {
 	return ' &hellip; <a href="'. get_permalink() . '">Weiterlesen <span class="meta-nav">&rarr;</span></a>';
 }
-add_filter( 'excerpt_more', 'adfc2010_excerpt_more' );
+// add_filter( 'excerpt_more', 'adfc2010_excerpt_more' );
 
 /**
  * Remove inline styles printed when the gallery shortcode is used.

@@ -123,13 +123,14 @@ a.singleArrow:hover, a.singleArrow:active, a.singleArrowActive:link, a.singleArr
 	background-image:		url(gfx/arrow_right_active.gif);
 }
 
-div#subpages ul {
+div#subpages li.page_item, div#subpages li.current_page_item {
 	list-style-type:		none;
 }
 
-div#subpages li.page_item {
+div#subpages li.page_item, div#subpages li.current_page_item {
 	display: 			block;
 	background-repeat: 		none;
+	margin:				0;
 }
 
 a.iconPrint:link, a.iconPrint:hover, a.iconPrint:active, a.iconPrint:visited {

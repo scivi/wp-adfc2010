@@ -104,7 +104,7 @@
 
 <?php /* How to display all other posts */ ?>
 	<?php else : ?>
-		<div <?php !is_single() ? echo 'class="newsTeaser" ' : ''; ?>id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+		<div <?php echo (!is_single()) ? 'class="newsTeaser" ' : ''; ?>id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<h1>
 		<?php if (!is_single()) : ?>
 				<a href="<?php the_permalink(); ?>" title="<?php printf(esc_attr__('Permalink zu %s', 'twentyten'), the_title_attribute('echo=0')); ?>" rel="bookmark"><?php the_title(); ?></a>

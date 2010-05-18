@@ -27,4 +27,3 @@
 					</ul>
 				</div>
 			</div>
-<?php update_post_caches($posts); ?>

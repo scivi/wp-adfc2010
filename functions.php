@@ -300,7 +300,7 @@ function remember_tags($these) {
 }
 
 function uniq_objects($ary, $id_field) {
-	$uniq = array()
+	$uniq = array();
 	foreach ($ary as $obj) {
 		$uniq[$cat->$id_field] = $obj;
 	}

@@ -13,7 +13,7 @@
 	// feature
 	if (is_home() || is_front_page()) :
 		$featuredPosts = new WP_Query();
-		$featuredPosts->query('showposts=1&cat=42');
+		$featuredPosts->query('showposts=2&cat=42');
 		while ( $featuredPosts->have_posts()) : $featuredPosts->the_post(); ?>
 						<div class="newsTeaser"><h1><a rel="bookmark" href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
 							<div class="entry-meta"><?php

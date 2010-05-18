@@ -33,26 +33,28 @@
 						<div class="teaserBox noPrint">
 							<h2>Verwandte Themen</h2>
 							<div class="content noMargin">
-								<?php foreach(uniq_objects(remember_categories(), 'cat_ID') as $cat) {
+								<?php // print_r(remember('categories')); 
+								?>
+								<?php foreach(uniq_objects(remember('categories'), 'cat_ID') as $cat) {
 									echo '<a class="blockLink singleArrow" href="' . get_category_link($cat->cat_ID) . "\">$cat->cat_name</a>";
 								}; ?>
 							</div>
 						</div>
-<?php if ( $tags ) : ?>
+<?php if (remember('tags')) : ?>
 						<div class="teaserBox noPrint">
 							<h2>Stichworte</h2>
 							<div class="content noMargin">
-								<?php foreach(uniq_objects(remember_tags(), 'term_ID') as $tag) {
+								<?php foreach(uniq_objects(remember('tags'), 'term_ID') as $tag) {
 									echo '<a class="blockLink singleArrow" href="' . get_tag_link($tag->term_ID) . "\">$tag->name</a>";
 								}; ?>
 							</div>
 						</div>
 <?php endif; ?>
-<?php global $editlink; if ( $editlink ) : ?>
+<?php if (remember('editlink')) : ?>
 						<div class="teaserBox noPrint">
 							<h2>Admin</h2>
 							<div class="content noMargin">
-								 <span class="blockLink singleArrow edit-link">'<?php echo $editlink; ?></span>
+								 <span class="blockLink singleArrow edit-link">'<?php echo remember('editlink'); ?></span>
 							</div>
 						</div>
 <?php endif; ?>

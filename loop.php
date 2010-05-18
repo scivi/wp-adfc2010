@@ -129,10 +129,9 @@
 			</div>
 	<?php endif; ?>
 	<?php // for the right sidebar; comes after the loop
-		remember_categories();
-		remember_tags();
-		global $editlink;
-		if (! (is_archive() && is_search())) $editlink = get_edit_post_link('Bearbeiten');
+		remember('categories', get_the_category());
+		remember('tags', get_the_tags());
+		if (! (is_archive() && is_search())) remember('editlink', get_edit_post_link('Bearbeiten'));
 	?>
 			<div class="entry-utility">
 				<span class="cat-links"><?php the_category( ', ' ); ?></span>

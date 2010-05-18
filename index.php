@@ -33,7 +33,9 @@
 						<div class="teaserBox noPrint">
 							<h2>Verwandte Themen</h2>
 							<div class="content noMargin">
-								<?php echo join(', ', $categories); ?>
+								<?php foreach($categories as $cat) {
+									echo '<a href="' . get_category_link($cat->cat_ID) "\">$cat->cat_name</a>"
+								}; ?>
 							</div>
 						</div>
 <?php if ( $tags ) : ?>

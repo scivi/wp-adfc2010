@@ -353,15 +353,15 @@ body {
 .entry-meta {
 	font-size:			9px;
 	margin:				0 0 20px 0;
+	padding:			0 0 0 10px;
 	background:			#edf4fa url(gfx/teaserbox_headline_rounded_corner_orange.gif) no-repeat;
 	color:				#475c66;
 }
-.entry-meta a {
-	margin:				0 0 0 15px;
-}
 
-.entry-meta .permalink {
+.entry-meta .permalink,
+.entry-meta .permalink a {
 	font-size:			9px;
+	display:			inline;
 }
 
 .entry-utility {

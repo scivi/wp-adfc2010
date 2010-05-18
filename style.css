@@ -635,7 +635,8 @@ li.meta_enhanced {
 	padding-top:			24px;
 }
 
-.navigation .widget_nav_menu h3.widget-title {
+.navigation .widget_nav_menu h3.widget-title,
+#secondary h3.widget-title {
 	display: none;
 }
 

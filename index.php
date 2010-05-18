@@ -27,7 +27,7 @@
 										get_the_author()
 									);
 							?></div>
-							<div "teaserBox teaserBoxGrey teaserBoxOffer">
+							<div <?php post_class(); ?>>
 								<?php the_content('Mehr zu &raquo;' . get_the_title() . '&laquo;'); ?>
 							</div>
 						</div>

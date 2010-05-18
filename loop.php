@@ -154,6 +154,6 @@
 	<?php endif; // if different categories queried ?>
 <?php endwhile; ?>
 <?php
-	$categories = array_unique($categories);
-	$tags = array_unique($tags);
+	//$categories = array_unique($categories);
+	//$tags = array_unique($tags);
 ?>

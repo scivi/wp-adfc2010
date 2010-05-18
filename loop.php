@@ -125,7 +125,7 @@
 		<?php endif; ?>
 		<?php if ( is_archive() || is_search() ) : // Only display Excerpts for archives & search ?>
 			<div <?php echo (!is_single()) ? 'class="content" ' : '' ?>>
-				<?php the_excerpt('Mehr zu &raquo;' . get_the_title() . '&laquo;'); ?>
+				<?php the_content('Mehr zu &raquo;' . get_the_title() . '&laquo;'); ?>
 			</div>
 		<?php else : ?>
 			<div class="content <?php echo is_single() ? 'noMargin' : '' ?>">

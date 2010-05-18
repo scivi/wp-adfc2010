@@ -54,7 +54,7 @@
 						<div class="teaserBox noPrint">
 							<h2>Admin</h2>
 							<div class="content noMargin">
-								 <span class="blockLink singleArrow edit-link">'<?php echo remember('editlink'); ?></span>
+								 <div class="blockLink singleArrow edit-link">'<?php echo remember('editlink'); ?></div>
 							</div>
 						</div>
 <?php endif; ?>

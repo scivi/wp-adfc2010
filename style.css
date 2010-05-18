@@ -499,6 +499,16 @@ body {
 	width:				588px;
 }
 
+.footer ul {
+	list-style-type:		none;
+}
+.footer ul li {
+	display:			inline-block;
+}
+.footer ul li:before {
+	content:			' | ';
+}
+
 .footer a:link, .footer a:hover, .footer a:active, .footer a:visited {
 	color:				#464646;
 }

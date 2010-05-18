@@ -134,10 +134,9 @@
 		if (!is_archive() && !is_search()) remember('the_id', get_the_ID());
 	?>
 			<div class="entry-utility">
-				<?php // <span class="comments-link">
-				      // comments_popup_link( __( 'Leave a comment', 'twentyten' ), __( '1 Comment', 'twentyten' ), __( '% Comments', 'twentyten' ) ); 
-				      //</span>
-				?>
+				<span class="comments-link">
+				<?php comments_popup_link( 'Einen Kommentar schreiben', 'Ein Kommentar', '% Kommentare'); ?>
+				</span>
 			</div>
 		</div><!-- #post-<?php the_ID(); ?> -->
 		<?php // comments_template( '', true ); 

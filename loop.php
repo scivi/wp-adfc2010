@@ -120,8 +120,8 @@
 						sprintf( esc_attr__('Alle Beiträge von %s zeigen', 'twentyten'), get_the_author()),
 						get_the_author()
 					);
-				?><br/>
-				<a href="<?php the_permalink(); ?>" title="<?php printf(esc_attr__('Permalink zu %s', 'twentyten'), the_title_attribute('echo=0')); ?>" rel="bookmark">Permalink</a>
+				?> 
+				<span class="permalink">[<a href="<?php the_permalink(); ?>" title="<?php printf(esc_attr__('Permalink zu %s', 'twentyten'), the_title_attribute('echo=0')); ?>" rel="bookmark">Permalink</a>]</span>
 			</div>
 
 	<?php if ( is_archive() || is_search() ) : // Only display Excerpts for archives & search ?>

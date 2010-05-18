@@ -33,15 +33,17 @@
 						<div class="teaserBox noPrint">
 							<h2>Verwandte Themen</h2>
 							<div class="content noMargin">
-								<?php echo $categories; ?>
+								<?php echo join(', ', $categories); ?>
 							</div>
 						</div>
+<?php if ( $tags ) : ?>
 						<div class="teaserBox noPrint">
 							<h2>Stichworte</h2>
 							<div class="content noMargin">
 								<?php echo $tags; ?>
 							</div>
 						</div>
+<?php endif; ?>
 <?php if ( $editlink ) : ?>
 						<div class="teaserBox noPrint">
 							<h2>Admin</h2>

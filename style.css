@@ -356,6 +356,13 @@ body {
 	background:			#edf4fa url(gfx/teaserbox_headline_rounded_corner_orange.gif) no-repeat;
 	color:				#475c66;
 }
+.entry-meta a {
+	margin:				0 0 0 15px;
+}
+
+.entry-meta .permalink {
+	font-size:			9px;
+}
 
 .entry-utility {
 	display:			block;

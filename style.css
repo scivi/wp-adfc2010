@@ -246,6 +246,26 @@ body {
 	width:				219px;
 }
 
+.main .leftCol #wp-calendar {
+	margin:				0 0 0 30px;
+}
+
+/* specific widget titles */
+li.ec3_widget_cal  {
+	border-bottom:			1px solid white;
+}
+
+li.ec3_widget_cal h3,
+li.widget_gdtt_termslist h3,
+li.meta_enhanced {
+	display:			block;
+	margin:				0;
+	font-style:			normal;
+	text-align:			left;
+}
+
+
+
 .navigation {
 	border-right:			#edf4fa solid 1px;
 }
@@ -470,21 +490,6 @@ body {
 
 .content .leftCol .bottomLinks .middleCol {
 	width:				116px;
-}
-
-#wp-calendar {
-	margin:				0 0 0 30px;
-}
-li#event-calendar {
-	border-bottom:			1px solid white;
-}
-
-li#event-calendar h3,
-li#gdtttermslist-3 h3 {
-	display:			block;
-	margin:				0;
-	font-style:			normal;
-	text-align:			left;
 }
 
 .adsRight {

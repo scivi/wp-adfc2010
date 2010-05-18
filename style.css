@@ -481,7 +481,7 @@ li#event-calendar {
 
 li#event-calendar h3 {
 	display:			block;
-	margin:				0 0 0 33px;
+	margin:				0;
 	font-style:			normal;
 	text-align:			left;
 }

@@ -506,6 +506,7 @@ body {
 
 .footer ul {
 	list-style-type:		none;
+	width:				45%;
 }
 .footer ul, .footer div {
 	display: 			inline;

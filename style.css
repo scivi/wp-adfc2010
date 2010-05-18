@@ -479,6 +479,11 @@ li#event-calendar {
 	border-bottom:			1px solid white;
 }
 
+li#event-calendar h3 {
+	display:			block;
+	margin:				0 0 0 30px;
+}
+
 .adsRight {
 	float:				left;
 	margin:				0 0 0 8px;

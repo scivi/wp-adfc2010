@@ -260,6 +260,10 @@ li.ec3_widget_cal  {
 	border-bottom:			1px solid white;
 }
 
+li#bcn_widget-4 { /* this is just there to get the breadcrumbs right before the calendar breaks them. */
+	display:			none;
+}
+
 li.ec3_widget_cal h3,
 li.widget_gdtt_termslist h3,
 li.meta_enhanced {

@@ -3,9 +3,9 @@
 			<div class="rightCol printRightCol">
 				<div class="metaNav"><?php wp_nav_menu( array( 'sort_column' => 'menu_order' /*, 'container_class' => 'metaNav' */) ); ?></div>
 				<div class="breadcrumb"><p class="noMargin">
-<?php if (is_home() || is_front_page()) : ?>
+<?php if (is_home() || is_front_page()) { ?>
 					<strong>Aktuelles vom ADFC Sachsen-Anhalt e.V.</strong>
-<?php elseif(function_exists('bcn_display')) : bcn_display(); endif; ?>
+<?php } elseif(function_exists('bcn_display')) { bcn_display(); } ?>
 				</p></div>
 				<div class="content">
 					<div class="leftCol">
@@ -70,7 +70,7 @@
 							<h2>Stichworte</h2>
 							<div class="content noMargin">
 								<?php foreach(uniq_objects(remember('tags'), 'term_id') as $tag) {
-									echo '<a class="blockLink singleArrow" href="' . get_tag_link($tag->term_id) . "\">$tag->name</a>";
+									echo '<a class="blockLink singleArro`w" href="' . get_tag_link($tag->term_id) . "\">$tag->name</a>";
 								}; ?>
 							</div>
 						</div>

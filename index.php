@@ -16,7 +16,7 @@
 		$featuredPosts->query('posts_per_page=1&cat=42');
 		global $more;
 		while ( $featuredPosts->have_posts()) : $featuredPosts->the_post(); update_post_caches($posts); $more = 0; ?>
-						<div class="teaserBox teaserBox teaserBoxGrey"><h1><a rel="bookmark" href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
+						<div class="newsTeaser"><h1><a rel="bookmark" href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
 							<div class="entry-meta"><?php
 									printf('<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a>. <span class="meta-sep"> Von </span> <span class="author vcard"><a class="url fn n" href="%4$s" title="%5$s">%6$s</a></span>',
 										get_permalink(),
@@ -27,7 +27,7 @@
 										get_the_author()
 									);
 							?></div>
-							<div <?php post_class(); ?>>
+							<div "teaserBox teaserBoxGrey teaserBoxOffer">
 								<?php the_content('Mehr zu &raquo;' . get_the_title() . '&laquo;'); ?>
 							</div>
 						</div>

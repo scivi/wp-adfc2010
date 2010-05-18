@@ -692,6 +692,10 @@ li#event-calendar h3 {
 	margin:				0 12px 0 0;
 }
 
+.newsTeaser .content {
+	margin-bottom:			12px;
+}
+
 /* DEFINITIONS: NEWS-TEASER -> END */
 
 /* DEFINITIONS: RUBRIC-TEASER -> START */

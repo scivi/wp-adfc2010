@@ -132,8 +132,8 @@
 		global $categories, $tags, $editlink;
 		if (! is_array($categories))	$categories = array();
 		if (! is_array($tags)) 			$tags = array();
-		$categories += get_the_category() || array();
-		$tags += get_the_tags() || array();
+		$categories += array_merge($categories, get_the_category() || array());
+		$tags += array_merge($categories, get_the_tags() || array());
 		
 		if (! (is_archive() && is_search())) $editlink = get_edit_post_link('Bearbeiten');
 	?>

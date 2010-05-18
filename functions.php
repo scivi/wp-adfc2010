@@ -136,7 +136,7 @@ add_filter( 'excerpt_length', 'adfc2010_excerpt_length' );
 function adfc2010_excerpt_more( $more ) {
 	return ' &hellip; <a href="'. get_permalink() . '">Weiterlesen <span class="meta-nav">&rarr;</span></a>';
 }
-// add_filter( 'excerpt_more', 'adfc2010_excerpt_more' );
+add_filter( 'excerpt_more', 'adfc2010_excerpt_more' );
 
 /**
  * Remove inline styles printed when the gallery shortcode is used.

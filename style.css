@@ -322,7 +322,8 @@ li.meta_enhanced {
 	margin: 0 0;
 }
 
-.main .rightCol .content ul {
+.main .rightCol .content .leftCol ul,
+.main .rightCol .content .leftCol ul li {
 	list-style-type: circle;
 }
 

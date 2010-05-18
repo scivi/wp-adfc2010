@@ -59,7 +59,7 @@
 							array_shift(remember('the_id')));
 						?>
 								<div id="secondary" class="widget-area">
-									<ul>
+									<ul class="xoxo">
 										<?php dynamic_sidebar( 'secondary-widget-area' ); ?>
 									</ul>
 								</div>

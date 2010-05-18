@@ -104,7 +104,7 @@
 
 <?php /* How to display all other posts */ ?>
 	<?php else : ?>
-		<div class="newsTeaser" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+		<div <?php is_single() ? echo 'class="newsTeaser" ' : ''; ?>id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<h1><a href="<?php the_permalink(); ?>" title="<?php printf(esc_attr__('Permalink zu %s', 'twentyten'), the_title_attribute('echo=0')); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 			<div class="entry-meta">
 				<?php
@@ -133,9 +133,9 @@
 		remember('tags', get_the_tags());
 		if (!is_archive() && !is_search()) remember('the_id', get_the_ID());
 	?>
-			<div class="entry-utility">
+			<div class="entry-utility hidden">
 				<span class="comments-link">
-				<?php comments_popup_link( 'Einen Kommentar schreiben', 'Ein Kommentar', '% Kommentare'); ?>
+				<?php // comments_popup_link( 'Einen Kommentar schreiben', 'Ein Kommentar', '% Kommentare'); ?>
 				</span>
 			</div>
 		</div><!-- #post-<?php the_ID(); ?> -->

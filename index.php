@@ -30,11 +30,10 @@
 							</div>
 						</div>
 <?php endif; ?>
-<?php global $categories, $tags, $editlink; ?>
 						<div class="teaserBox noPrint">
 							<h2>Verwandte Themen</h2>
 							<div class="content noMargin">
-								<?php foreach(uniq_objects($categories, 'cat_ID') as $cat) {
+								<?php foreach(uniq_objects(remember_categories(), 'cat_ID') as $cat) {
 									echo '<a class="blockLink singleArrow" href="' . get_category_link($cat->cat_ID) . "\">$cat->cat_name</a>";
 								}; ?>
 							</div>
@@ -43,13 +42,13 @@
 						<div class="teaserBox noPrint">
 							<h2>Stichworte</h2>
 							<div class="content noMargin">
-								<?php foreach(uniq_objects($tags, 'term_ID') as $tag) {
+								<?php foreach(uniq_objects(remember_tags(), 'term_ID') as $tag) {
 									echo '<a class="blockLink singleArrow" href="' . get_tag_link($tag->term_ID) . "\">$tag->name</a>";
 								}; ?>
 							</div>
 						</div>
 <?php endif; ?>
-<?php if ( $editlink ) : ?>
+<?php global $editlink; if ( $editlink ) : ?>
 						<div class="teaserBox noPrint">
 							<h2>Admin</h2>
 							<div class="content noMargin">

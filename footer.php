@@ -6,7 +6,7 @@
 		<div class="footer">
 			<p class="noMargin noPrint">
 				&copy; ADFC Sachsen-Anhalt <?php echo date('Y'); ?>
-				<?php dynamic_sidebar( 'first-footer-area' ); ?>
+				<?php dynamic_sidebar( 'footer-widget-area' ); ?>
 			</p>
 		</div>
 		<?php wp_footer(); ?>

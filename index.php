@@ -43,13 +43,15 @@ get_template_part( 'loop', 'index' ); // all stuff
 						<div class="printFooter"><p>&copy; ADFC Sachsen-Anhalt e.V. <?php echo date('Y'); ?></p></div>
 					</div>
 					<div class="rightCol">
-<?php /* Display navigation to next/previous pages when applicable */ 
-	$children = wp_list_pages('title_li=&child_of='.remember('the_id').'&echo=0');
-	$has_pages = $wp_query->max_num_pages > 1
+<?php /* Display navigation to next/previous pages when applicable */
+	$children_for = remember('the_id');
+	if ($children_for == -1) $children = false;
+	else $children = wp_list_pages("title_li=&child_of=${children_for}&echo=0");
+	$has_pages = $wp_query->max_num_pages > 1;
 ?>
 <?php if ($has_pages || $children) : ?>
 						<div class="teaserBox noPrint">
-						<h2>Weitere Inhalte <?php if ($has_pages) { ?>(Seite  ($paged == 0) ? 1 : $paged; ?>/<?php echo $wp_query->max_num_pages; ?>)<?php } ?></h2>
+						<h2>Weitere Inhalte <?php if ($has_pages) { ?>(Seite <?php echo (($paged == 0) ? 1 : $paged) .'/'. $wp_query->max_num_pages .')'; } ?></h2>
 						<?php if ($has_pages) : ?>
 							<div id="nav-timeline-right" class="content noMargin">
 							<?php global $paged; if ($paged < $wp_query->max_num_pages) : ?> 

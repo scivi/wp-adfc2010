@@ -472,6 +472,11 @@ body {
 	width:				116px;
 }
 
+#wp-calendar {
+	margin:				0 0 0 13px;
+	border-bottom:			1px solid white;
+}
+
 .adsRight {
 	float:				left;
 	margin:				0 0 0 8px;

@@ -30,8 +30,8 @@
 								<?php the_excerpt('Mehr zu &raquo;' . get_the_title() . '&laquo;'); ?>
 							</div>
 						</div>
-<?php endwhile; // feature ?>
-<?php get_template_part( 'loop', 'index' ); ?>
+<?php endwhile; endif; // feature 
+get_template_part( 'loop', 'index' ); ?>
 						<div class="bottomLinks">
 							<div class="leftCol"><p><a href="javascript:history.back();" class="arrowLeft" title="Springt zur vorherigen Seite zurück">zur&uuml;ck</a></p></div>
 							<div class="middleCol"><p><a href="javascript:window.print()" class="iconPrint" title="Öffnet den Druckdialog des Browsers und druckt die aktuelle Seite ohne Kopfzeile und Navigation">Seite drucken</a></p></div>

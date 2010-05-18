@@ -326,6 +326,7 @@ address {
 	display:			block;
 	margin:				6px 0 12px 0;
 	min-height:			24px;
+	font-style:			normal;
 }
 
 #searchform {

@@ -121,7 +121,7 @@
 						get_the_author()
 					);
 				?><br/>
-				<a href="<?php the_permalink(); ?>" title="<?php printf(esc_attr__('Permalink zu %s', 'twentyten'), the_title_attribute('echo=0')); ?>" rel="bookmark"><?php the_title(); ?></a>
+				<a href="<?php the_permalink(); ?>" title="<?php printf(esc_attr__('Permalink zu %s', 'twentyten'), the_title_attribute('echo=0')); ?>" rel="bookmark">Permalink</a>
 			</div>
 
 	<?php if ( is_archive() || is_search() ) : // Only display Excerpts for archives & search ?>
@@ -136,7 +136,7 @@
 	<?php endif; ?>
 	<?php // for the right sidebar; comes after the loop
 		$categories = get_the_category(', ');
-		$tags = get_thetags('', ', ', '<br/>');
+		$tags = get_the_tags('', ', ', '<br/>');
 		$editlink = get_edit_post_link('Bearbeiten', '<span class="edit-link">', '</span>' );
 	?>
 

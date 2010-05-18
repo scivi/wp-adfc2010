@@ -699,6 +699,7 @@ address {
 	border-bottom:			#e6edf3 solid 1px;
 	margin:				0 0 15px;
 	padding:			0 0 15px;
+	clear:				left;
 }
 
 .newsTeaser p {

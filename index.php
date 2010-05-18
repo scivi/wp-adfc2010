@@ -34,7 +34,7 @@
 							<h2>Verwandte Themen</h2>
 							<div class="content noMargin">
 								<?php foreach($categories as $cat) {
-									echo '<a href="' . get_category_link($cat->cat_ID) . "\">$cat->cat_name</a>";
+									echo '<a class="blockLink singleArrow" href="' . get_category_link($cat->cat_ID) . "\">$cat->cat_name</a>";
 								}; ?>
 							</div>
 						</div>
@@ -42,7 +42,9 @@
 						<div class="teaserBox noPrint">
 							<h2>Stichworte</h2>
 							<div class="content noMargin">
-								<?php echo $tags; ?>
+								<?php foreach($tags as $tag) {
+									echo '<a class="blockLink singleArrow" href="' . get_tag_link($tag->term_ID) . "\">$tag->name</a>";
+								}; ?>
 							</div>
 						</div>
 <?php endif; ?>

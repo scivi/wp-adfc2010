@@ -655,6 +655,7 @@ li.meta_enhanced {
 	background-image:		url(gfx/navigation_active_bg.gif);
 }
 
+.navigation ul .tags li a:link, .navigation ul .tags li a:hover, .navigation ul .tags li a:active, .navigation ul .tags li a:visited, .navigation ul .tags li.current-menu-item a:link, .navigation ul .tags li.current-menu-item a:hover, .navigation ul .tags li.current-menu-item a:active, .navigation ul .tags li.current-menu-item a:visited,
 .navigation ul ul li a:link, .navigation ul ul li a:hover, .navigation ul ul li a:active, .navigation ul ul li a:visited, .navigation ul ul li.current-menu-item a:link, .navigation ul ul li.current-menu-item a:hover, .navigation ul ul li.current-menu-item a:active, .navigation ul ul li.current-menu-item a:visited {
 	background:			none;
 	border:				0;
@@ -665,10 +666,12 @@ li.meta_enhanced {
 	padding-bottom:			5px;
 }
 
+.navigation ul .tags li a:hover, .navigation ul .tags li a:active, .navigation ul .tags li.curent-menu-item a:link, .navigation ul .tags li.curent-menu-item a:hover, .navigation ul .tags li.curent-menu-item a:active, .navigation ul .tags li.curent-menu-item a:visited,
 .navigation ul ul li a:hover, .navigation ul ul li a:active, .navigation ul ul li.current-menu-item a:link, .navigation ul ul li.current-menu-item a:hover, .navigation ul ul li.current-menu-item a:active, .navigation ul ul li.current-menu-item a:visited {
 	background:			url(gfx/subnavigation_hover_bg.gif) 14px center no-repeat;
 }
 
+.navigation ul .tags li.curent-menu-item a:link, .navigation ul .tags li.curent-menu-item a:hover, .navigation ul .tags li.curent-menu-item a:active, .navigation ul .tags li.curent-menu-item a:visited,
 .navigation ul ul li.current-menu-item a:link, .navigation ul ul li.current-menu-item a:hover, .navigation ul ul li.current-menu-item a:active, .navigation ul ul li.current-menu-item a:visited {
 	font-weight:			bold;
 }

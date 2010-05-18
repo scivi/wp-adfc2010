@@ -26,7 +26,7 @@
 							<div id="nav-timeline-right" class="content noMargin">
 								<span class="blockLink singleArrow nav-previous"><?php next_posts_link('<span class="meta-nav">&larr;</span> &Auml;ltere Beitr&auml;ge', ''); ?></span>
 								<span class="blockLink singleArrow nav-next"><?php previous_posts_link('Neuere Beitr&auml;ge <span class="meta-nav">&rarr;</span>'); ?></span>
-								<span class="blockLink">(Seite <?php echo get_query_var('paged')3 ?> von <?php echo $wp_query->max_num_pages ?> Seiten)</span>
+								<span class="blockLink">(Seite <?php echo get_query_var('paged'); ?> von <?php echo $wp_query->max_num_pages; ?> Seiten)</span>
 							</div>
 						</div>
 <?php endif; ?>

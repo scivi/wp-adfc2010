@@ -87,8 +87,8 @@ get_template_part( 'loop', 'index' ); // all stuff
 									$class = '';
 									list($url, $title) = explode('|', $link);
 									if ($title == '') { $title = preg_replace('@https?://@', '', $url); }
-									if (('http' == substr($url, 0, 4)) && (!strstr('adfc-sachsen-anhalt', $url))) { $class = 'class="external"'; }
-									echo "<li><a $class href=\"$url\">$title</a></li>";
+									if (('http' == substr($url, 0, 4)) && (!strstr('adfc-sachsen-anhalt', $url))) { $class = 'external'; }
+									echo "<li><a class=\"blockLink singleArrow $class\" href=\"$url\">$title</a></li>";
 								} ?>
 								</ul>
 							</div>

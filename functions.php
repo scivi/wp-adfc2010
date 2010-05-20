@@ -203,7 +203,7 @@ function adfc2010_widgets_init() {
 	register_sidebar( array (
 		'name' => 'Erster Widget-Bereich',
 		'id' => 'primary-widget-area',
-		'description' => 'Der 1. Widget-Bereich, in der Sidebar oben',
+		'description' => 'Der 1. Widget-Bereich, in der linken Sidebar',
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 		'after_widget' => "</li>",
 		'before_title' => '<h3 class="widget-title">',
@@ -214,7 +214,7 @@ function adfc2010_widgets_init() {
 	register_sidebar( array (
 		'name' => 'Zweiter Widget-Bereich',
 		'id' => 'secondary-widget-area',
-		'description' => 'Der 2. Widget-Bereich, in der Sidebar unten.',
+		'description' => 'Der 2. Widget-Bereich, in der rechten Sidebar unten',
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 		'after_widget' => "</li>",
 		'before_title' => '<h3 class="widget-title">',

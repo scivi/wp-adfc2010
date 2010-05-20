@@ -48,14 +48,20 @@ get_template_part( 'loop', 'index' ); // all stuff
 						<div class="printFooter"><p>&copy; ADFC Sachsen-Anhalt e.V. <?php echo date('Y'); ?></p></div>
 					</div>
 					<div class="rightCol">
-<?php /* Display navigation to next/previous pages when applicable */
+<?php 
+	// Display navigation to next/previous pages when applicable
+	$has_pages = $wp_query->max_num_pages > 1;
+
+	// sub-pages menu - TODO: show siblings, if on subpage.
 	$children_for = array_shift(remember('id'));
 	if (is_numeric($children_for)) { $children = wp_list_pages("title_li=&child_of=${children_for}&echo=0"); }
 	else { $children = false; }
-	// TODO: siblings
-	$has_pages = $wp_query->max_num_pages > 1;
+
+	// get extra links (custom field)
+	if (is_numeric($children_for)) { $extra_links = get_post_custom_values('Weitere Inhalte - Extra Link', $children_for); }
+	else { $extra_links = false; }	
 ?>
-<?php if ($has_pages || $children) : ?>
+<?php if ($has_pages || $children || $extra_links) : ?>
 						<div class="teaserBox noPrint">
 						<h2>Weitere Inhalte <?php if ($has_pages) { ?>(Seite <?php echo (($paged == 0) ? 1 : $paged) .'/'. $wp_query->max_num_pages .')'; } ?></h2>
 						<?php if ($has_pages) : ?>
@@ -71,6 +77,19 @@ get_template_part( 'loop', 'index' ); // all stuff
 						if ($children) : ?>
 							<div id="subpages" class="content noMargin">
 								<ul><?php echo $children; ?></ul>
+							</div>
+						<?php endif; 
+						if ($extra_links) : ?>
+							<div id="extralinks" class="content noMargin">
+								<ul>
+								<?php foreach ($extra_links as $link) {
+									$class = '';
+									list($url, $title) = split($link, '|');
+									if ($title == '') { $title = preg_replace('@https?://@', '', $url); }
+									if (('http' == substr($url, 0, 4) && (!strstr('adfc-sachsen-anhalt', $url)) { $class = 'class="external"'; }
+									echo "<li><a $class href=\"$url\">$title</a></li>";
+								} ?>
+								</ul>
 							</div>
 						<?php endif; ?>
 						</div>

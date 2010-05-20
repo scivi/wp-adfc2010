@@ -83,8 +83,9 @@ get_template_part( 'loop', 'index' ); // all stuff
 							<div id="extralinks" class="content noMargin">
 								<ul>
 								<?php foreach ($extra_links as $link) {
+									if (!$link) continue;
 									$class = '';
-									list($url, $title) = split('|', $link);
+									list($url, $title) = explode('|', $link);
 									if ($title == '') { $title = preg_replace('@https?://@', '', $url); }
 									if (('http' == substr($url, 0, 4)) && (!strstr('adfc-sachsen-anhalt', $url))) { $class = 'class="external"'; }
 									echo "<li><a $class href=\"$url\">$title</a></li>";

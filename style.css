@@ -660,7 +660,7 @@ address {
 
 .navigation ul li a:link, .navigation ul li a:hover, .navigation ul li a:active, .navigation ul li a:visited,
 .navigation h3,
-.navigation ul.ec3_events li.ec3_list {
+.navigation ul.ec3_events ul li.ec3_list {
 	background:			url(gfx/navigation_normal_bg.gif) left center no-repeat;
 	border-bottom:			white solid 1px;
 	color:				#475c66;
@@ -671,6 +671,16 @@ address {
 	min-height:			24px;
 	padding:			11px 10px 0 43px;
 	text-decoration:		none;
+}
+
+.navigation ul.ec3_events {
+	border:				none;
+	background-image:		none;
+}
+
+.navigation ul.ec3_events ul {
+	border-top:			1px solid white;;
+	background-image:		none;
 }
 
 .navigation h3 {

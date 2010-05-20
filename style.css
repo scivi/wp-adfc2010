@@ -660,7 +660,7 @@ address {
 
 .navigation ul li a:link, .navigation ul li a:hover, .navigation ul li a:active, .navigation ul li a:visited,
 .navigation h3,
-.navigation li ec3_list {
+.navigation ul.ec3_events li.ec3_list {
 	background:			url(gfx/navigation_normal_bg.gif) left center no-repeat;
 	border-bottom:			white solid 1px;
 	color:				#475c66;

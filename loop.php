@@ -112,7 +112,7 @@
 		<?php if (!is_page()) : ?>
 			<div class="entry-meta">
 				<?php
-					printf('<span class="entry-date">%3$s</span> | <span class="meta-sep"> Von </span> <span class="author vcard"><a class="url fn n" href="%4$s" title="%5$s">%6$s</a></span>',
+					printf('<span class="entry-date">%3$s</span> &ndash; <span class="meta-sep"> Von </span> <span class="author vcard"><a class="url fn n" href="%4$s" title="%5$s">%6$s</a></span>',
 						get_permalink(),
 						esc_attr( get_the_time() ),
 						get_the_date(),

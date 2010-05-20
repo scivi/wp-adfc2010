@@ -285,6 +285,7 @@ li#bcn_widget-4 { /* this is just there to get the breadcrumbs right before the 
 }
 
 li.ec3_widget_cal h3,
+li.multiwidget_ec3-event-list h3,
 li.widget_gdtt_termslist h3,
 li.meta_enhanced {
 	display:			block;
@@ -292,7 +293,6 @@ li.meta_enhanced {
 	font-style:			normal;
 	text-align:			left;
 }
-
 
 
 .navigation {
@@ -659,7 +659,8 @@ address {
 }
 
 .navigation ul li a:link, .navigation ul li a:hover, .navigation ul li a:active, .navigation ul li a:visited,
-.navigation h3 {
+.navigation h3,
+.navigation li ec3_list {
 	background:			url(gfx/navigation_normal_bg.gif) left center no-repeat;
 	border-bottom:			white solid 1px;
 	color:				#475c66;

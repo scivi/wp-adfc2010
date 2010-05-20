@@ -50,6 +50,7 @@ get_template_part( 'loop', 'index' ); // all stuff
 					<div class="rightCol">
 <?php 
 	// Display navigation to next/previous pages when applicable
+	global $paged;
 	$has_pages = $wp_query->max_num_pages > 1;
 
 	// sub-pages menu - TODO: show siblings, if on subpage.
@@ -66,7 +67,7 @@ get_template_part( 'loop', 'index' ); // all stuff
 						<h2>Weitere Inhalte <?php if ($has_pages) { ?>(Seite <?php echo (($paged == 0) ? 1 : $paged) .'/'. $wp_query->max_num_pages .')'; } ?></h2>
 						<?php if ($has_pages) : ?>
 							<div id="nav-timeline-right" class="content noMargin">
-							<?php global $paged; if ($paged < $wp_query->max_num_pages) : ?> 
+							<?php if ($paged < $wp_query->max_num_pages) : ?> 
 								<a class="blockLink singleArrow nav-older" href="<?php next_posts();?>">&Auml;ltere Beitr&auml;ge</a>
 							<?php endif;
 							if ($paged > 1) : ?>	
@@ -92,22 +93,23 @@ get_template_part( 'loop', 'index' ); // all stuff
 							</div>
 						<?php endif; ?>
 						</div>
-<?php endif; ?>
+<?php endif; 
+if ($cats = uniq_objects(remember('categories'), 'cat_ID')) : ?>
 						<div class="teaserBox noPrint">
 							<h2>Verwandte Themen</h2>
 							<div class="content noMargin">
-								<?php // print_r(remember('categories')); 
-								?>
-								<?php foreach(uniq_objects(remember('categories'), 'cat_ID') as $cat) {
+								<?php // print_r($cats); 
+								foreach($cats as $cat) {
 									echo '<a class="blockLink singleArrow" href="' . get_category_link($cat->cat_ID) . "\">$cat->cat_name</a>";
 								}; ?>
 							</div>
 						</div>
-<?php if (remember('tags')) : ?>
+<?php endif;
+if ($tags = uniq_objects(remember('tags'), 'term_id')) : ?>
 						<div class="teaserBox noPrint">
 							<h2>Stichworte</h2>
 							<div class="content noMargin">
-								<?php foreach(uniq_objects(remember('tags'), 'term_id') as $tag) {
+								<?php foreach($tags as $tag) {
 									echo '<a class="blockLink singleArro`w" href="' . get_tag_link($tag->term_id) . "\">$tag->name</a>";
 								}; ?>
 							</div>
@@ -120,7 +122,7 @@ get_template_part( 'loop', 'index' ); // all stuff
 						?>
 								<div id="secondary" class="widget-area">
 									<ul>
-										<?php dynamic_sidebar('secondary-widget-area'); ?>
+									<?php dynamic_sidebar('secondary-widget-area'); ?>
 									</ul>
 								</div>
 							</div>

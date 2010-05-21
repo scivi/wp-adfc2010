@@ -102,7 +102,7 @@ if ($cats = uniq_objects(remember('categories'), 'cat_ID')) : ?>
 								foreach($cats as $cat) {
 									$url = get_category_link($cat->cat_ID);
 									$cur = $_SERVER['REQUEST_URI'];
-									echo substr($cur, 0, strpos($cur, '/page/'));
+									if (substr($url, 29) == $cur) continue;
 									if (substr($url, 29) == substr($cur, 0, strpos($cur, '/page/'))) continue;
 									echo "<a class=\"blockLink singleArrow\" href=\"$url\">$cat->cat_name</a>";
 								}; ?>

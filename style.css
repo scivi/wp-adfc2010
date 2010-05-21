@@ -782,7 +782,7 @@ address {
 	float: left;
 }
 
-.post .post p > a > img {
+.post .post p > a > img.size-thumbnail {
 	display: none;
 }
 

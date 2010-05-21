@@ -100,7 +100,9 @@ if ($cats = uniq_objects(remember('categories'), 'cat_ID')) : ?>
 							<div class="content noMargin">
 								<?php // print_r($cats); 
 								foreach($cats as $cat) {
-									echo '<a class="blockLink singleArrow" href="' . get_category_link($cat->cat_ID) . "\">$cat->cat_name</a>";
+									$url = get_category_link($cat->cat_ID);
+									if ($url == $_SERVER['REQUEST_URI']) continue;
+									echo "<a class=\"blockLink singleArrow\" href="$url">$cat->cat_name</a>";
 								}; ?>
 							</div>
 						</div>

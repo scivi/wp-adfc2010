@@ -778,6 +778,14 @@ address {
 	padding-bottom:			12px;
 }
 
+.post p > a > img {
+	float: left;
+}
+
+.post .post p > a > img {
+	display: none;
+}
+
 /* DEFINITIONS: NEWS-TEASER -> END */
 
 /* DEFINITIONS: RUBRIC-TEASER -> START */

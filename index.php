@@ -9,7 +9,7 @@
 				</p></div>
 				<div class="content">
 					<div class="leftCol">
-<?php 
+<?php
 	// feature
 	if (is_home() || is_front_page()) :
 		$featuredPosts = new WP_Query();
@@ -25,7 +25,7 @@
 							<div class="entry-meta"><?php
 									printf('<span class="entry-date">%3$s</span><span class="meta-sep"> &ndash; Von </span> <span class="author vcard"><a class="url fn n" href="%4$s" title="%5$s">%6$s</a></span>',
 										get_permalink(),
-										esc_attr( get_the_time() ),
+										esc_attr( get_the_time()),
 										get_the_date(),
 										get_author_posts_url(get_the_author_meta('ID')),
 										sprintf( esc_attr__('Alle Beiträge von %s zeigen', 'twentyten'), get_the_author()),

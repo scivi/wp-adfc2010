@@ -20,6 +20,7 @@
 		'show_images'		=> false,
 		'category_before'	=> '<div class="newsDetail" id="link-%id;"><ul>',
 		'title_before'		=> '<h3>',
+		'between'			=> '<br/>',
  		'title_after'		=> '</h3>',
 		'category_after'	=> '</ul></div>'
 	));

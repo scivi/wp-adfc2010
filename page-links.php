@@ -14,13 +14,21 @@
 <?php
 	//get_links(cat, 'before', 'after', 'between', show_images, 'order', show_desc, show_rating, limit, show_updated, echo); 
 	//get_linksbyname('', '<li>', '</li>', '', TRUE, 'name', FALSE, TRUE); 
+	wp_list_bookmarks(array(
+		'show_description'	=> true,
+		'show_name'			=> false, 
+		'category_before'	=> '<div class="newsDetail" id="link-%id;">',
+		'title_before'		=> '<h3>',
+ 		'title_after'		=> '</h2>',
+		'category_after'	=> '</div>'
+	));
+	/*
 	$cats = array (  6 => 'ADFC',
 					11 => 'Reise',
 					34 => 'Ratgeber',
 					21 => 'Verkehr',
 					);
-	foreach ( $cats as $cid => $catname ) {
-?>
+	foreach ( $cats as $cid => $catname ) { ?>
 						<div class="newsDetail" id="link-<?php echo $cid; ?>">
 							<h3><?php echo $catname ?></h3>
 							<ul>
@@ -28,6 +36,8 @@
 							</ul>
 						</div>
 	<?php } ?>
+	*/
+?>
 						<div class="bottomLinks">
 							<div class="leftCol"><p><a href="javascript:history.back();" class="arrowLeft" title="Springt zur vorherigen Seite zurück">zur&uuml;ck</a></p></div>
 							<div class="middleCol"><p><a href="javascript:window.print()" class="iconPrint" title="Öffnet den Druckdialog des Browsers und druckt die aktuelle Seite ohne Kopfzeile und Navigation">Seite drucken</a></p></div>

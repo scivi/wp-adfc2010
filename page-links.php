@@ -17,10 +17,10 @@
 	wp_list_bookmarks(array(
 		'show_description'	=> true,
 		'show_name'			=> false, 
-		'category_before'	=> '<div class="newsDetail" id="link-%id;">',
+		'category_before'	=> '<div class="newsDetail" id="link-%id;"><ul>',
 		'title_before'		=> '<h3>',
- 		'title_after'		=> '</h2>',
-		'category_after'	=> '</div>'
+ 		'title_after'		=> '</h3>',
+		'category_after'	=> '</ul></div>'
 	));
 	/*
 	$cats = array (  6 => 'ADFC',

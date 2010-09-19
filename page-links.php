@@ -16,8 +16,8 @@
 	//get_linksbyname('', '<li>', '</li>', '', TRUE, 'name', FALSE, TRUE); 
 	wp_list_bookmarks(array(
 		'show_description'	=> true,
-		'show_name'			=> false,
-		'show_image'		=> false,
+		'show_name'			=> true,
+		'show_images'		=> false,
 		'category_before'	=> '<div class="newsDetail" id="link-%id;"><ul>',
 		'title_before'		=> '<h3>',
  		'title_after'		=> '</h3>',

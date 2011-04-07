@@ -101,6 +101,42 @@
 			</div><!-- #post-<?php the_ID(); ?> -->
 		</div><!-- teaserbox -->
 
+
+
+<?php /* How to display Radtouren */ ?>
+    <?php elseif (is_post_type('radtour', get_the_ID())) : ?>
+    <div <?php echo (!is_single()) ? 'class="newsTeaser" ' : ''; ?>id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+			<h1>
+		<?php if (!is_single()) : ?>
+			    <a href="<?php the_permalink(); ?>" title="<?php printf(esc_attr__('Permalink zu %s', 'twentyten'), the_title_attribute('echo=0')); ?>" rel="bookmark"><?php the_title(); ?></a>
+		<?php else : the_title(); endif ?>
+			</h1>
+        <?php if (!is_page()) : ?>
+			<div class="entry-meta">
+				<?php
+				    remember('veranstalter', get_the_terms(get_the_ID(), 'veranstalter'));
+					printf('<span class="entry-date">%1$s</span><span class="meta-sep"> &ndash; </span> <span class="veranstalter">%2$s</span>',
+						get_the_date(),
+						get_the_term_list(get_the_ID(), 'veranstalter', '', ',', '')
+					);
+				?>
+			</div>
+		<?php endif; ?>
+		<?php if (! is_archive() && ! is_search()) { 
+		    remember('id', array(get_the_ID()));
+            remember('besonderheiten', get_the_terms(get_the_ID(), 'besonderheiten'));
+		} ?>
+		<div <?php post_class(); ?>>
+			<?php the_content('Mehr zu &raquo;' . get_the_title() . '&laquo;'); ?>
+			<span class="treffpunkt"><?php
+		        get_post_meta(get_the_ID(), 'Termin-Beginn', true);
+			    echo ' - ';
+			    get_post_meta(get_the_ID(), 'Termin-Ort', true);
+			?></span><?php
+			    get_the_term_list(get_the_ID(), 'schwierigkeitsgrad', '<div class="schwierigkeitsgrad">Schwierigkeitsgrad: ', ',', '</div>')
+			    get_the_term_list(get_the_ID(), 'besonderheiten', '<div class="besonderheiten">Mit: ', ',', '</div>');
+			?>
+		</div>
 <?php /* How to display all other posts */ ?>
 	<?php else : ?>
 		<div <?php echo (!is_single()) ? 'class="newsTeaser" ' : ''; ?>id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -112,9 +148,7 @@
 		<?php if (!is_page()) : ?>
 			<div class="entry-meta">
 				<?php
-					printf('<span class="entry-date">%3$s</span><span class="meta-sep"> &ndash; Von </span> <span class="author vcard"><a class="url fn n" href="%4$s" title="%5$s">%6$s</a></span>',
-						get_permalink(),
-						esc_attr( get_the_time() ),
+					printf('<span class="entry-date">%1$s</span><span class="meta-sep"> &ndash; Von </span> <span class="author vcard"><a class="url fn n" href="%2$s" title="%3$s">%4$s</a></span>',
 						get_the_date(),
 						get_author_posts_url(get_the_author_meta('ID')),
 						sprintf( esc_attr__('Alle Beiträge von %s zeigen', 'twentyten'), get_the_author()),

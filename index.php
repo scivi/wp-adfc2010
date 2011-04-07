@@ -60,7 +60,7 @@ get_template_part( 'loop', 'index' ); // all stuff
 
 	// get extra links (custom field)
 	if (is_numeric($children_for)) { $extra_links = get_post_custom_values('Weitere Inhalte - Extra Link', $children_for); }
-	else { $extra_links = false; }	
+	else { $extra_links = false; }
 ?>
 <?php if ($has_pages || $children || $extra_links) : ?>
 						<div class="teaserBox noPrint">
@@ -79,7 +79,7 @@ get_template_part( 'loop', 'index' ); // all stuff
 							<div id="subpages" class="content noMargin">
 								<ul><?php echo $children; ?></ul>
 							</div>
-						<?php endif; 
+						<?php endif;
 						if ($extra_links) : ?>
 							<div id="extralinks" class="content noMargin">
 							<?php foreach ($extra_links as $link) {

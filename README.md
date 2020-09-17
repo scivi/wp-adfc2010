@@ -5,7 +5,3 @@ Ursprünglich entwickelt für den [ADFC Sachsen-Anhalt e.V.](http://adfc-sachsen
 
 Basiert auf der HTML- und CSS-Vorlage des ADFC-Bundesverbandes.
 
-Kontakt
--------
-
-Christof Glaser [<webmaster@adfc-lsa.de>](mailto:webmaster@adfc-lsa.de?subject='Wordpress Theme')
